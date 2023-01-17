@@ -1,18 +1,31 @@
 {
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
     "clean": "turbo run clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "dev": "turbo run dev",
+    "dev:kitchensink": "turbo run dev --no-cache --scope='kitchensink' --continue",
+    "dev:web": "turbo run dev --no-cache --scope='web' --continue",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check"
   },
   "devDependencies": {
+    "@plasmohq/prettier-plugin-sort-imports": "^3.6.1",
+    "@types/eslint": "^8.4.10",
+    "@types/prettier": "^2.7.2",
     "eslint": "^8.32.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "^2.8.3",
+    "prettier-plugin-packagejson": "^2.4.0",
     "prettier-plugin-tailwindcss": "^0.2.1",
-    "turbo": "latest"
+    "turbo": "latest",
+    "typesync": "^0.9.2"
   },
   "packageManager": "pnpm@7.25.0"
 }
