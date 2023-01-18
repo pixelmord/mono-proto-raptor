@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --prefer-offline --frozen-lockfile
-      - run: pnpm exec playwright install
+      - run: pnpm dlx playwright install
 
       - name: Build
         run: pnpm build
