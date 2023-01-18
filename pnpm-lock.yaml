@@ -33,7 +33,7 @@ importers:
       '@types/react-dom': ^18.0.10
       autoprefixer: ^10.4.13
       eslint-config-custom: workspace:*
-      next: latest
+      next: ^13.1.2
       postcss: ^8.4.21
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -66,7 +66,7 @@ importers:
       '@types/react-dom': ^18.0.10
       autoprefixer: ^10.4.13
       eslint-config-custom: workspace:*
-      next: latest
+      next: ^13.1.2
       postcss: ^8.4.21
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -94,9 +94,9 @@ importers:
 
   packages/eslint-config-custom:
     specifiers:
-      eslint-config-next: latest
+      eslint-config-next: ^13.1.2
       eslint-config-prettier: ^8.6.0
-      eslint-config-turbo: latest
+      eslint-config-turbo: ^0.0.7
       eslint-plugin-react: 7.32.1
     dependencies:
       eslint-config-next: 13.1.2_7uibuqfxkfaozanbtbziikiqje
@@ -124,6 +124,31 @@ importers:
     devDependencies:
       '@types/react': 18.0.26
       '@types/react-dom': 18.0.10
+
+  packages/kitchensink-test:
+    specifiers:
+      '@playwright/test': ^1.29.2
+      '@types/eslint': ^8.4.10
+      '@types/node': ^18.11.9
+      eslint: ^8.31.0
+      eslint-config-custom: workspace:*
+      kitchensink: workspace:*
+      playwright-watch: ^1.3.23
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+      watch: ^1.0.2
+    dependencies:
+      kitchensink: link:../../apps/kitchensink
+    devDependencies:
+      '@playwright/test': 1.29.2
+      '@types/eslint': 8.4.10
+      '@types/node': 18.11.18
+      eslint: 8.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      playwright-watch: 1.3.23_playwright@1.29.2
+      tsconfig: link:../tsconfig
+      typescript: 4.9.4
+      watch: 1.0.2
 
   packages/tailwind-config:
     specifiers:
@@ -177,6 +202,31 @@ importers:
       tsconfig: link:../tsconfig
       tsup: 6.5.0_k22f457wtryv7dv7ltdlwpdpdm
       typescript: 4.9.4
+
+  packages/web-test:
+    specifiers:
+      '@playwright/test': ^1.29.2
+      '@types/eslint': ^8.4.10
+      '@types/node': ^18.11.9
+      eslint: ^8.31.0
+      eslint-config-custom: workspace:*
+      playwright-watch: ^1.3.23
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+      watch: ^1.0.2
+      web: workspace:*
+    dependencies:
+      web: link:../../apps/web
+    devDependencies:
+      '@playwright/test': 1.29.2
+      '@types/eslint': 8.4.10
+      '@types/node': 18.11.18
+      eslint: 8.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      playwright-watch: 1.3.23_playwright@1.29.2
+      tsconfig: link:../tsconfig
+      typescript: 4.9.4
+      watch: 1.0.2
 
 packages:
 
@@ -1004,6 +1054,15 @@ packages:
       prettier: 2.8.3
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@playwright/test/1.29.2:
+    resolution: {integrity: sha512-+3/GPwOgcoF0xLz/opTnahel1/y42PdcgZ4hs+BZGIUjtmEFSXGg+nFoaH3NSmuc7a6GSFwXDJ5L7VXpqzigNg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.11.18
+      playwright-core: 1.29.2
     dev: true
 
   /@rushstack/eslint-patch/1.2.0:
@@ -2695,6 +2754,12 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
+  /exec-sh/0.2.2:
+    resolution: {integrity: sha512-FIUCJz1RbuS0FKTdaAafAByGS0CPvU3R0MeHxgtl+djzCc//F8HakL8GzmVNZanasTbTAY/3DRFA0KpVqj/eAw==}
+    dependencies:
+      merge: 1.2.1
+    dev: true
+
   /execa/5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
@@ -4013,6 +4078,10 @@ packages:
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
 
+  /merge/1.2.1:
+    resolution: {integrity: sha512-VjFo4P5Whtj4vsLzsYBu5ayHhoHJ0UqNm7ibvShmbmoz7tGi0vXaoJbGdB+GmDMLUdg8DpQXEIeVDAe8MaABvQ==}
+    dev: true
+
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -4415,6 +4484,33 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+
+  /playwright-core/1.29.2:
+    resolution: {integrity: sha512-94QXm4PMgFoHAhlCuoWyaBYKb92yOcGVHdQLoxQ7Wjlc7Flg4aC/jbFW7xMR52OfXMVkWicue4WXE7QEegbIRA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
+  /playwright-watch/1.3.23_playwright@1.29.2:
+    resolution: {integrity: sha512-/eAsrZSqxmAluB5C+U9eRDATGIMdhgtHK1Rdb9n/RUOliaS6mLcut3kUNAVsVM4iQYp2bYJnYEa7L3Jchqp8Tw==}
+    hasBin: true
+    peerDependencies:
+      playwright: '>=1'
+    dependencies:
+      chokidar: 3.5.3
+      cosmiconfig: 7.1.0
+      playwright: 1.29.2
+      yargs: 17.6.2
+    dev: true
+
+  /playwright/1.29.2:
+    resolution: {integrity: sha512-hKBYJUtdmYzcjdhYDkP9WGtORwwZBBKAW8+Lz7sr0ZMxtJr04ASXVzH5eBWtDkdb0c3LLFsehfPBTRfvlfKJOA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.29.2
+    dev: true
 
   /postcss-import/14.1.0_postcss@8.4.21:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
@@ -5412,6 +5508,15 @@ packages:
     resolution: {integrity: sha512-ts/8E8l5b7kY0vlWLewOkDXMmPdLcVV4GmOQLyxuSswIJsweeFZtAsMF7k1Nszz+TYBQrlYRmzOnr398y1JemQ==}
     dependencies:
       makeerror: 1.0.12
+
+  /watch/1.0.2:
+    resolution: {integrity: sha512-1u+Z5n9Jc1E2c7qDO8SinPoZuHj7FgbgU1olSFoyaklduDvvtX7GMMtlE6OC9FTXq4KvNAOfj6Zu4vI1e9bAKA==}
+    engines: {node: '>=0.1.95'}
+    hasBin: true
+    dependencies:
+      exec-sh: 0.2.2
+      minimist: 1.2.7
+    dev: true
 
   /wcwidth/1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}

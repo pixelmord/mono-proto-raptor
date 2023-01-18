@@ -17,7 +17,7 @@ export default function Home() {
           </span>{' '}
         </h1>
         <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button>{'hello'}</Button>
+          <Button>{'hello!'}</Button>
         </div>
       </main>
     </div>

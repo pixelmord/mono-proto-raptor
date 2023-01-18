@@ -5,9 +5,19 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "start": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "start:test": {
+      "dependsOn": ["build"]
+    },
     "test": {
       "outputs": ["coverage/**"],
       "dependsOn": []
+    },
+    "test:e2e": {
+      "dependsOn": ["start:test"]
     },
     "lint": {},
     "dev": {

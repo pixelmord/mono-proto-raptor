@@ -7,12 +7,16 @@
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --no-cache --continue",
     "dev:kitchensink": "turbo run dev --no-cache --scope='kitchensink' --continue",
     "dev:web": "turbo run dev --no-cache --scope='web' --continue",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
     "lint": "turbo run lint",
+    "start": "turbo run start",
+    "start:kitchensink": "turbo run start --scope='kitchensink'",
+    "start:web": "turbo run start --scope='web'",
     "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
     "type-check": "turbo run type-check"
   },
   "devDependencies": {

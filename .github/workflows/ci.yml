@@ -33,7 +33,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --prefer-offline --frozen-lockfile
 
       - name: Build
         run: pnpm build
@@ -41,5 +41,5 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      # - name: Test
-      #   run: pnpm test
+      - name: Test
+        run: pnpm test
