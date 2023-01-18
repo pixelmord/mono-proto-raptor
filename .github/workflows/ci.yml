@@ -41,5 +41,11 @@ jobs:
       - name: Lint
         run: pnpm lint
 
+      - name: Type-Check
+        run: pnpm type-check
+
       - name: Test
         run: pnpm test
+
+      - name: Test E2E
+        run: pnpm test:e2e
