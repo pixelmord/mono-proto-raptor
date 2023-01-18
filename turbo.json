@@ -16,9 +16,7 @@
       "outputs": ["coverage/**"],
       "dependsOn": []
     },
-    "test:e2e": {
-      "dependsOn": ["start:test"]
-    },
+    "test:e2e": {},
     "type-check": {
       "outputs": []
     },

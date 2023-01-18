@@ -14,6 +14,7 @@
     "lint": "turbo run lint",
     "start": "turbo run start",
     "start:kitchensink": "turbo run start --scope='kitchensink'",
+    "start:test": "turbo run start:test",
     "start:web": "turbo run start --scope='web'",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
