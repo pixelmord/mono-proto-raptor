@@ -49,7 +49,7 @@ jobs:
         run: pnpm test
 
       - name: Start for Tests
-        run: pnpm start:test
+        run: pnpm start:test &
 
       - name: Test E2E
         run: pnpm test:e2e
