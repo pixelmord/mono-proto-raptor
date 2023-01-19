@@ -43,17 +43,16 @@ a demo that showcases features
 
 ### Developer tooling
 
-- [] eslint
-- [] jest
-- [] prettier
-- [] playwright e2e
+- [x] eslint
+- [x] jest
+- [x] prettier
+- [x] playwright e2e
 - [] local https
 - [] husky
 - [] lint-staged
-- [] deploy to vercel button
 - [] commit linter
 - [] semantic release
-- [] hygen templates
+- [x] hygen templates
 
 ### i18n
 
