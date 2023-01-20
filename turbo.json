@@ -5,6 +5,21 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "start": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "start:test": {
+      "dependsOn": ["build"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": []
+    },
+    "test:e2e": {},
+    "type-check": {
+      "outputs": []
+    },
     "lint": {},
     "dev": {
       "cache": false,

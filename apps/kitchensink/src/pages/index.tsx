@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { Button } from "ui";
+import Head from 'next/head';
+import { Button } from 'ui';
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
           Kitchensink ⏲ <br className="hidden lg:block" />
           <span className="inline-block bg-gradient-to-r from-red-500 to-blue-500 bg-clip-text text-transparent ">
             Example
-          </span>{" "}
+          </span>{' '}
         </h1>
         <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
+          <Button>{'hello'}</Button>
         </div>
       </main>
     </div>
