@@ -1,31 +1,33 @@
 import { useMemo } from 'react';
-import { Descendant, createEditor } from 'slate';
+import { Descendant, Editor, createEditor } from 'slate';
 import { withHistory } from 'slate-history';
-import { Editable, ReactEditor, Slate, withReact } from 'slate-react';
+import { Editable, Slate, withReact } from 'slate-react';
+
+import { EditorPlugin, composeEditableProps } from './utils/compose-plugins';
 
 interface PageEditorProps {
   document?: Descendant[];
   onChange: ((value: Descendant[]) => void) | undefined;
   className?: string;
+  plugins?: EditorPlugin[];
 }
 export const PageEditor = ({
   document = [
     {
-      children: [
-        {
-          text: 'hallo',
-        },
-      ],
+      type: 'paragraph',
+      children: [{ text: '' }],
     },
   ],
   onChange,
   className,
+  plugins = [],
 }: PageEditorProps) => {
-  const editor = useMemo<ReactEditor>(() => withHistory(withReact(createEditor())), []);
+  const editor = useMemo<Editor>(() => withHistory(withReact(createEditor())), []);
+  const { editableProps } = composeEditableProps(plugins, editor);
 
   return (
     <Slate editor={editor} onChange={onChange} value={document}>
-      <Editable className={className} />
+      <Editable className={className} {...editableProps} />
     </Slate>
   );
 };
