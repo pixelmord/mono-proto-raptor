@@ -23,10 +23,15 @@ export const PageEditor = ({
   plugins = [],
 }: PageEditorProps) => {
   const editor = useMemo<Editor>(() => withHistory(withReact(createEditor())), []);
-  const { editableProps } = composeEditableProps(plugins, editor);
+  const { editableProps, toolbarTools } = composeEditableProps(plugins, editor);
 
   return (
     <Slate editor={editor} onChange={onChange} value={document}>
+      <div>
+        {toolbarTools.map((tool) => (
+          <>{tool}</>
+        ))}
+      </div>
       <Editable className={className} {...editableProps} />
     </Slate>
   );

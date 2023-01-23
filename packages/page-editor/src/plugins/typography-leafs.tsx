@@ -1,9 +1,23 @@
-import { DefaultElement } from 'slate-react';
+import { Button } from 'ui';
 
 import { EditorPlugin } from '../utils/compose-plugins';
+import { getActiveStyles, toggleStyle } from '../utils/editor-utils';
 
-export const typographyLeafsPlugin: EditorPlugin = (editableProps) => {
+const LEAF_STYLES = ['bold', 'italic', 'underline', 'code'];
+export const typographyLeafsPlugin: EditorPlugin = (editableProps, editor) => {
   return {
+    toolbarTools: LEAF_STYLES.map((style) => (
+      <Button
+        onMouseDown={(event) => {
+          event.preventDefault();
+          toggleStyle(editor, style);
+        }}
+        className={`m-1`}
+        intent={getActiveStyles(editor).has(style) ? 'primary' : 'outline'}
+      >
+        {style}
+      </Button>
+    )),
     editableProps: {
       ...editableProps,
       renderLeaf: (props) => {

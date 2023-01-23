@@ -21,7 +21,8 @@
   "dependencies": {
     "slate": "^0.88.1",
     "slate-history": "^0.86.0",
-    "slate-react": "^0.88.2"
+    "slate-react": "^0.88.2",
+    "ui": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

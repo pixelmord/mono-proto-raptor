@@ -12,7 +12,7 @@ export default function Post() {
             Example
           </span>{' '}
         </H1>
-        <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
+        <div className="mx-auto mt-5 max-w-3xl sm:flex sm:flex-col sm:justify-center md:mt-8">
           <Editor />
         </div>
       </div>

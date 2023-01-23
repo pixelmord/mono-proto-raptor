@@ -5,20 +5,18 @@ import { EditableProps } from 'slate-react/dist/components/editable';
 export type EditorPlugin = (
   editableProps: EditableProps,
   editor: Editor
-) => { editableProps: EditableProps; toolbarTool?: ReactNode };
+) => { editableProps: EditableProps; toolbarTools?: ReactNode[] };
 
 export const composeEditableProps = (
   plugins: EditorPlugin[],
   editor: Editor
 ): { editableProps: EditableProps; toolbarTools: ReactNode[] } => {
   let editableProps: EditableProps = {};
-  const toolbarTools: ReactNode[] = [];
+  let toolbarTools: ReactNode[] = [];
   for (const plugin of plugins) {
-    const { editableProps: props, toolbarTool } = plugin(editableProps, editor);
+    const { editableProps: props, toolbarTools: tools } = plugin(editableProps, editor);
     editableProps = props;
-    if (toolbarTool) {
-      toolbarTools.push(toolbarTool);
-    }
+    toolbarTools = [...toolbarTools, ...(tools && tools.length ? tools : [])];
   }
   return { editableProps, toolbarTools };
 };
