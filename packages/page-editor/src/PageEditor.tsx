@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
-import { Descendant, Editor, createEditor } from 'slate';
+import { Editor, Descendant as EditorDescendant, createEditor } from 'slate';
 import { withHistory } from 'slate-history';
 import { Editable, Slate, withReact } from 'slate-react';
 
 import { EditorPlugin, composeEditableProps } from './utils/compose-plugins';
 
+export type Descendant = EditorDescendant;
 interface PageEditorProps {
   document?: Descendant[];
   onChange: ((value: Descendant[]) => void) | undefined;
@@ -15,7 +16,7 @@ export const PageEditor = ({
   document = [
     {
       type: 'paragraph',
-      children: [{ text: '' }],
+      children: [{ text: '', bold: true }],
     },
   ],
   onChange,
