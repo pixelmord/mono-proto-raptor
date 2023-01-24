@@ -1,23 +1,13 @@
+import { useSlate } from 'slate-react';
 import { Button } from 'ui';
 
 import { EditorPlugin } from '../utils/compose-plugins';
-import { getActiveStyles, toggleStyle } from '../utils/editor-utils';
+import { getActiveStyles, toggleMark } from '../utils/editor-utils';
 
 const LEAF_STYLES = ['bold', 'italic', 'underline', 'code'];
 export const typographyLeafsPlugin: EditorPlugin = (editableProps, editor) => {
   return {
-    toolbarTools: LEAF_STYLES.map((style) => (
-      <Button
-        onMouseDown={(event) => {
-          event.preventDefault();
-          toggleStyle(editor, style);
-        }}
-        className={`m-1`}
-        intent={getActiveStyles(editor).has(style) ? 'primary' : 'outline'}
-      >
-        {style}
-      </Button>
-    )),
+    toolbarTools: LEAF_STYLES.map((style) => <LeafButton leaf_style={style} />),
     editableProps: {
       ...editableProps,
       renderLeaf: (props) => {
@@ -41,5 +31,27 @@ export const typographyLeafsPlugin: EditorPlugin = (editableProps, editor) => {
         return <span {...attributes}>{el}</span>;
       },
     },
+    hotKeyMap: {
+      'mod+b': 'bold',
+      'mod+i': 'italic',
+      'mod+u': 'underline',
+      'mod+`': 'code',
+    },
   };
+};
+
+const LeafButton = ({ leaf_style }: { leaf_style: string }) => {
+  const editor = useSlate();
+  return (
+    <Button
+      onMouseDown={(event) => {
+        event.preventDefault();
+        toggleMark(editor, leaf_style);
+      }}
+      className={`m-1`}
+      intent={getActiveStyles(editor).has(leaf_style) ? 'primary' : 'outline'}
+    >
+      {leaf_style}
+    </Button>
+  );
 };

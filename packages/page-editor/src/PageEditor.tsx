@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { Editor, Descendant as EditorDescendant, createEditor } from 'slate';
 import { withHistory } from 'slate-history';
 import { Editable, Slate, withReact } from 'slate-react';
@@ -12,25 +12,15 @@ interface PageEditorProps {
   className?: string;
   plugins?: EditorPlugin[];
 }
-export const PageEditor = ({
-  document = [
-    {
-      type: 'paragraph',
-      children: [{ text: '', bold: true }],
-    },
-  ],
-  onChange,
-  className,
-  plugins = [],
-}: PageEditorProps) => {
+export const PageEditor = ({ document = [], onChange, className, plugins = [] }: PageEditorProps) => {
   const editor = useMemo<Editor>(() => withHistory(withReact(createEditor())), []);
   const { editableProps, toolbarTools } = composeEditableProps(plugins, editor);
 
   return (
     <Slate editor={editor} onChange={onChange} value={document}>
       <div>
-        {toolbarTools.map((tool) => (
-          <>{tool}</>
+        {toolbarTools.map((tool, index) => (
+          <Fragment key={index}>{tool}</Fragment>
         ))}
       </div>
       <Editable className={className} {...editableProps} />
