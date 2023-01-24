@@ -6,33 +6,33 @@ export type CustomEditor = BaseEditor & ReactEditor & HistoryEditor;
 export type TextAlignment = 'left' | 'center' | 'right';
 export type ParagraphElement = {
   type: 'paragraph';
-  align: TextAlignment;
+  align?: TextAlignment;
   children: CustomText[];
 };
 export type BlockQuoteElement = {
   type: 'block-quote';
-  align: TextAlignment;
+  align?: TextAlignment;
   children: CustomText[];
 };
 export type BulletedListElement = {
   type: 'bulleted-list';
-  align: TextAlignment;
+  align?: TextAlignment;
   children: CustomText[];
 };
 export type NumberedListElement = {
   type: 'numbered-list';
-  align: TextAlignment;
+  align?: TextAlignment;
   children: CustomText[];
 };
 export type ListItemElement = {
   type: 'list-item';
-  align: TextAlignment;
+  align?: TextAlignment;
   children: CustomText[];
 };
 
 export type HeadingElement = {
   type: 'heading';
-  align: TextAlignment;
+  align?: TextAlignment;
   level: number;
   children: CustomText[];
 };
