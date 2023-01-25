@@ -27,8 +27,9 @@ export const typographyLeafsPlugin: EditorPlugin = (editableProps, editor) => {
         if (leaf.underline) {
           el = <u>{el}</u>;
         }
+        el = <span {...attributes}>{el}</span>;
 
-        return <span {...attributes}>{el}</span>;
+        return editableProps.renderLeaf?.({ ...props, children: el }) || el;
       },
     },
     hotKeyMap: {
