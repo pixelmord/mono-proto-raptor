@@ -7,7 +7,7 @@ import { useCallback, useState } from 'react';
 
 const PageEditor = dynamic(() => import('page-editor').then((mod) => mod.PageEditor), { ssr: false });
 export const Editor = () => {
-  const [value, setValue] = useState<Descendant[]>([
+  const initialValue: Descendant[] = [
     {
       type: 'paragraph',
       children: [
@@ -21,29 +21,15 @@ export const Editor = () => {
         { text: ' massa.', bold: true },
       ],
     },
-  ]);
-  const [commentValue, setCommentValue] = useState<{ commentId: string; commentDocument: Descendant[] }>({
-    commentId: '',
-    commentDocument: [
-      {
-        type: 'paragraph',
-        children: [
-          {
-            text: '',
-          },
-        ],
-      },
-    ],
-  });
+  ];
+  const [value, setValue] = useState<Descendant[]>(initialValue);
   const [commentMapValue, setCommentMapValue] = useState<Record<string, Descendant[]>>({});
   const changeHandler = useCallback((value) => {
     setValue(value);
   }, []);
-  const commentChangeHandler = useCallback((commentDocument, commentId) => {
-    setCommentValue({ commentId, commentDocument });
+  const commentChangeHandler = (commentDocument, commentId) => {
     setCommentMapValue({ ...commentMapValue, [commentId]: commentDocument });
-  }, []);
-  console.log(commentMapValue);
+  };
 
   return (
     <>
@@ -52,7 +38,7 @@ export const Editor = () => {
         onCommentChange={commentChangeHandler}
         comments={commentMapValue}
         className="min-w-full border rounded border-slate-300 p-5 shadow prose"
-        document={value}
+        document={initialValue}
         plugins={[defaultPropsPlugin, typographyLeafsPlugin, typographyBlocksPlugin, commentLeafPlugin]}
       />
       <div className="flex">
@@ -60,7 +46,7 @@ export const Editor = () => {
           <code>{JSON.stringify(value, null, 2)}</code>
         </pre>
         <pre className="block p-5 bg-slate-300">
-          <code>{JSON.stringify(commentValue, null, 2)}</code>
+          <code>{JSON.stringify(commentMapValue, null, 2)}</code>
         </pre>
       </div>
     </>

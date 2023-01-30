@@ -1,5 +1,5 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
-import { Editor, Descendant as EditorDescendant, createEditor } from 'slate';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Editor, Descendant as EditorDescendant, Transforms, createEditor } from 'slate';
 import { withHistory } from 'slate-history';
 import { Editable, Slate, withReact } from 'slate-react';
 
@@ -25,38 +25,59 @@ export const PageEditor = ({
   const editor = useMemo<Editor>(() => withHistory(withReact(createEditor())), []);
   const commentEditor = useMemo<Editor>(() => withHistory(withReact(createEditor())), []);
   const popoverRef = useRef<HTMLDivElement>(null);
-  const [commentDocument, setCommentDocument] = useState<Descendant[]>([
-    { type: 'paragraph', children: [{ text: '' }] },
-  ]);
+  const [commentIds, setCommentIds] = useState<string | null>(null);
+  const commentDocument: Descendant[] = [{ type: 'paragraph', children: [{ text: '' }] }];
   useEffect(() => {
-    if (popoverRef.current && popoverRef.current.dataset.commentIds) {
-      const commentId = popoverRef.current.dataset.commentIds;
-      const comment = comments?.[commentId];
-      if (comment) {
-        setCommentDocument(comment);
-      } else {
-        const newDocument: Descendant[] = [{ type: 'paragraph', children: [{ text: '' }] }];
-        setCommentDocument(newDocument);
-      }
+    // Delete all entries leaving 1 empty node
+    Transforms.delete(commentEditor, {
+      at: {
+        anchor: Editor.start(commentEditor, []),
+        focus: Editor.end(commentEditor, []),
+      },
+    });
+
+    // Removes empty node
+    Transforms.removeNodes(commentEditor, {
+      at: [0],
+    });
+
+    if (commentIds && comments && comments[commentIds]) {
+      // Insert array of children nodes
+      Transforms.insertNodes(commentEditor, comments?.[commentIds]);
+    } else {
+      const newDocument: Descendant[] = [{ type: 'paragraph', children: [{ text: '' }] }];
+      // Insert array of children nodes
+      Transforms.insertNodes(commentEditor, newDocument);
     }
-  }, [popoverRef.current, popoverRef.current?.dataset.commentIds]);
+  }, [commentIds]);
   const { editableProps, toolbarTools } = composeEditableProps(plugins, editor, { popoverRef });
   const changeHandler = (value: Descendant[]) => {
+    const isAstChange = editor.operations.some((op) => 'set_selection' !== op.type);
+    if (!isAstChange) {
+      const commentIds = Editor.marks(editor)?.commentIds?.join(',') || null;
+      setCommentIds(commentIds);
+    }
     for (const plugin of plugins) {
-      const { onChange } = plugin(editableProps, editor, { popoverRef });
-      onChange?.(value, editor);
+      const { onChange: pluginOnChange } = plugin(editableProps, editor, { popoverRef });
+      pluginOnChange?.(value, editor);
     }
 
     // call the changeHandler passed by the consumer
-    onChange?.(value, editor);
-  };
-  const commentChangeHandler = (value: Descendant[]) => {
-    const commentId = popoverRef.current?.dataset.commentIds;
-    // call the changeHandler passed by the consumer
-    if (commentId) {
-      onCommentChange?.(value, commentId);
+    if (isAstChange) {
+      onChange?.(value, editor);
     }
   };
+  const commentChangeHandler = useCallback(
+    (value: Descendant[]) => {
+      const commentId = popoverRef.current?.dataset.commentIds;
+      const isAstChange = commentEditor.operations.some((op) => 'set_selection' !== op.type);
+      // call the changeHandler passed by the consumer
+      if (commentId && isAstChange) {
+        onCommentChange?.(value, commentId);
+      }
+    },
+    [popoverRef.current?.dataset.commentIds]
+  );
   return (
     <div className="relative">
       <Slate editor={editor} onChange={changeHandler} value={document}>
