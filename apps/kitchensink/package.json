@@ -14,6 +14,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "next": "^13.1.5",
     "page-editor": "workspace:*",
+    "pocketbase": "^0.10.1",
     "post-editor": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

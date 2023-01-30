@@ -1,5 +1,5 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
+  "include": [".", "../../apps/kitchensink/src/lib"],
   "exclude": ["dist", "build", "node_modules"]
 }

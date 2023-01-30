@@ -1,24 +1,31 @@
 import { isHotkey } from 'is-hotkey';
-import { ReactNode } from 'react';
-import { Editor } from 'slate';
+import { ReactNode, RefObject } from 'react';
+import { Descendant, Editor } from 'slate';
 import { EditableProps } from 'slate-react/dist/components/editable';
 
 import { toggleMark } from './editor-utils';
 
 export type EditorPlugin = (
   editableProps: EditableProps,
-  editor: Editor
-) => { editableProps: EditableProps; toolbarTools?: ReactNode[]; hotKeyMap?: Record<string, string> };
+  editor: Editor,
+  refs: { popoverRef: RefObject<HTMLDivElement> }
+) => {
+  editableProps: EditableProps;
+  toolbarTools?: ReactNode[];
+  hotKeyMap?: Record<string, string>;
+  onChange?: (value: Descendant[], editor: Editor) => void;
+};
 
 export const composeEditableProps = (
   plugins: EditorPlugin[],
-  editor: Editor
+  editor: Editor,
+  refs: { popoverRef: RefObject<HTMLDivElement> }
 ): { editableProps: EditableProps; toolbarTools: ReactNode[] } => {
   let editableProps: EditableProps = {};
   let toolbarTools: ReactNode[] = [];
   let hotKeyMap: Record<string, string> = {};
   for (const plugin of plugins) {
-    const { editableProps: props, toolbarTools: tools, hotKeyMap: hotkeys } = plugin(editableProps, editor);
+    const { editableProps: props, toolbarTools: tools, hotKeyMap: hotkeys } = plugin(editableProps, editor, refs);
     hotKeyMap = { ...hotKeyMap, ...hotkeys };
     editableProps = {
       ...props,

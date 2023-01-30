@@ -45,7 +45,14 @@ export type CustomElement =
   | NumberedListElement
   | ListItemElement;
 
-export type FormattedText = { text: string; bold?: true; code?: true; italic?: true; underline?: true };
+export type FormattedText = {
+  text: string;
+  bold?: true;
+  code?: true;
+  italic?: true;
+  underline?: true;
+  commentIds?: string[];
+};
 
 export type CustomText = FormattedText;
 
