@@ -3,7 +3,14 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**"],
+      "env": [
+        "NEXT_PUBLIC_SITE_URL",
+        "NODE_ENV",
+        "NEXT_PUBLIC_POCKETBASE_URL",
+        "SECRET_COOKIE_PASSWORD",
+        "SESSION_COOKIE_NAME"
+      ]
     },
     "start": {
       "dependsOn": ["build"],
