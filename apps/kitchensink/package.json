@@ -10,15 +10,20 @@
     "start:test": "next start --port 3001"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.10",
     "@next/font": "^13.1.5",
+    "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
+    "iron-session": "^6.3.1",
     "next": "^13.1.5",
     "page-editor": "workspace:*",
     "pocketbase": "^0.10.1",
     "post-editor": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "workspace:*"
+    "react-hook-form": "^7.43.0",
+    "ui": "workspace:*",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

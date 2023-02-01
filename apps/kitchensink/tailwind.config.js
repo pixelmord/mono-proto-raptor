@@ -280,5 +280,5 @@ module.exports = {
       },
     }),
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [...config.plugins, require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };
