@@ -13,7 +13,8 @@
     "clean": "rm -rf dist",
     "dev": "concurrently \"tsup src/index.tsx --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "test": "jest"
+    "test": "jest",
+    "type-check": "tsc --pretty --noEmit"
   },
   "jest": {
     "preset": "jest-presets/jest/node"
