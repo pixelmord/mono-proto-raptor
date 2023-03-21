@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
-    "@next/font": "^13.2.4",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "iron-session": "^6.3.1",
