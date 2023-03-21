@@ -7,7 +7,7 @@ export const buttonStyle = cva(
     variants: {
       intent: {
         primary: [
-          'bg-accent-500',
+          'bg-accent-700',
           'text-white',
           'border-transparent',
           'hover:bg-accent-600',

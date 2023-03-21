@@ -22,11 +22,11 @@
     "type-check": "turbo run type-check"
   },
   "lint-staged": {
-    "apps/**/*.{js,ts,tsx,md,mdx}": [
+    "apps/**/*.{js,ts,tsx,md}": [
       "prettier --write",
       "eslint --fix"
     ],
-    "packages/**/*.{js,ts,tsx,md,mdx}": [
+    "packages/**/*.{js,ts,tsx,md}": [
       "prettier --write",
       "eslint --fix"
     ]
