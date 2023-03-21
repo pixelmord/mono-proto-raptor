@@ -3,5 +3,8 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.workingDirectories": [{ "pattern": "apps/*/" }, { "pattern": "packages/*/" }],
   "eslint.packageManager": "pnpm",
-  "cSpell.words": ["editorjs"]
+  "cSpell.words": [
+    "editorjs"
+  ],
+  "todo-tree.tree.showBadges": false
 }

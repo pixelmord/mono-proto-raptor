@@ -48,9 +48,8 @@ a demo that showcases features
 - [x] prettier
 - [x] playwright e2e
 - [ ] local https
-- [ ] husky
-- [ ] lint-staged
-- [ ] commit linter
+- [x] husky
+- [x] lint-staged
 - [ ] semantic release
 - [x] hygen templates
 
