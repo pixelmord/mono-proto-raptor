@@ -47,21 +47,21 @@ a demo that showcases features
 - [x] jest
 - [x] prettier
 - [x] playwright e2e
-- [] local https
-- [] husky
-- [] lint-staged
-- [] commit linter
-- [] semantic release
+- [ ] local https
+- [ ] husky
+- [ ] lint-staged
+- [ ] commit linter
+- [ ] semantic release
 - [x] hygen templates
 
 ### i18n
 
-- [] i18n configured for en, de
+- [ ] i18n configured for en, de
 
 ### SEO
 
-- [] NextSEO pre-configured
-- [] Sane defaults for meta tags not included in NextSEO
-- [] JSON-LD for articles and website
+- [ ] NextSEO pre-configured
+- [ ] Sane defaults for meta tags not included in NextSEO
+- [ ] JSON-LD for articles and website
 
 ## Content from MD files

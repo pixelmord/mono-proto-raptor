@@ -28,6 +28,7 @@
       "outputs": []
     },
     "lint": {},
+    "watch": {},
     "dev": {
       "cache": false,
       "persistent": true
