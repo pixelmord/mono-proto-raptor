@@ -8,11 +8,9 @@ module.exports = {
   printWidth: 120,
   singleQuote: true,
   plugins: [
-    require('prettier-plugin-tailwindcss'),
     require('prettier-plugin-packagejson'),
-    require('@plasmohq/prettier-plugin-sort-imports'),
+    require('prettier-plugin-organize-imports'),
+    require('prettier-plugin-tailwindcss'),
   ],
-  importOrder: ['^@/(.*)$', '^[./]'],
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
+  pluginSearchDirs: false,
 };

@@ -37,15 +37,15 @@ export const Editor = () => {
         onChange={changeHandler}
         onCommentChange={commentChangeHandler}
         comments={commentMapValue}
-        className="min-w-full border rounded border-slate-300 p-5 shadow prose"
+        className="prose min-w-full rounded border border-slate-300 p-5 shadow"
         document={initialValue}
         plugins={[defaultPropsPlugin, typographyLeafsPlugin, typographyBlocksPlugin, commentLeafPlugin]}
       />
       <div className="flex">
-        <pre className="block p-5 bg-slate-100">
+        <pre className="block bg-slate-100 p-5">
           <code>{JSON.stringify(value, null, 2)}</code>
         </pre>
-        <pre className="block p-5 bg-slate-300">
+        <pre className="block bg-slate-300 p-5">
           <code>{JSON.stringify(commentMapValue, null, 2)}</code>
         </pre>
       </div>

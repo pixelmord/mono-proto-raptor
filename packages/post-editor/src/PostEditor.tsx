@@ -64,5 +64,5 @@ export function Editor({ content = { blocks: [] }, changeHandler }: EditorProps)
     };
   }, [isMounted.current]);
 
-  return <div id="editor" className="min-h-[500px] dark:text-base-200" />;
+  return <div id="editor" className="dark:text-base-200 min-h-[500px]" />;
 }

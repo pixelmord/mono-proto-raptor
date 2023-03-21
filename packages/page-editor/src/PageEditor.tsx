@@ -88,9 +88,9 @@ export const PageEditor = ({
         </div>
         <Editable className={className} {...editableProps} />
       </Slate>
-      <div ref={popoverRef} className="absolute hidden border rounded shadow bg-white p-3">
+      <div ref={popoverRef} className="absolute hidden rounded border bg-white p-3 shadow">
         <Slate editor={commentEditor} onChange={commentChangeHandler} value={commentDocument}>
-          <Editable className="min-w-[300px] prose" />
+          <Editable className="prose min-w-[300px]" />
         </Slate>
       </div>
     </div>

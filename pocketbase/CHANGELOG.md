@@ -8,7 +8,6 @@
 
   - Slow clients should no longer "block" the main action completion.
 
-
 ## v0.11.2
 
 - Fixed `fs.DeleteByPrefix()` hang on invalid S3 settings ([#1575](https://github.com/pocketbase/pocketbase/discussions/1575#discussioncomment-4661089)).
@@ -17,15 +16,14 @@
   _Currently the cascade files delete operation is treated as "non-critical" and in case of an error it is just logged during debug._
   _This will be improved in the near future with the planned async job queue implementation._
 
-
 ## v0.11.1
 
 - Unescaped path parameter values ([#1552](https://github.com/pocketbase/pocketbase/issues/1552)).
 
-
 ## v0.11.0
 
 - Added `+` and `-` body field modifiers for `number`, `files`, `select` and `relation` fields.
+
   ```js
   {
     // oldValue + 2
@@ -39,12 +37,14 @@
     "someFile-": "filename.png",
   }
   ```
+
   _Note1: `@request.data.someField` will contain the final resolved value._
 
   _Note2: The old index (`"field.0":null`) and filename (`"field.filename.png":null`) based suffixed syntax for deleting files is still supported._
 
 - ! Added support for multi-match/match-all request data and collection multi-valued fields (`select`, `relation`) conditions.
   If you want a "at least one of" type of condition, you can prefix the operator with `?`.
+
   ```js
   // for each someRelA.someRelB record require the "status" field to be "active"
   someRelA.someRelB.status = "active"
@@ -52,23 +52,27 @@
   // OR for "at least one of" condition
   someRelA.someRelB.status ?= "active"
   ```
+
   _**Note: Previously the behavior for multi-valued fields was as the "at least one of" type.
   The release comes with system db migration that will update your existing API rules (if needed) to preserve the compatibility.
   If you have multi-select or multi-relation filter checks in your client-side code and want to preserve the old behavior, you'll have to prefix with `?` your operators.**_
 
 - Added support for querying `@request.data.someRelField.*` relation fields.
+
   ```js
   // example submitted data: {"someRel": "REL_RECORD_ID"}
   @request.data.someRel.status = "active"
   ```
 
 - Added `:isset` modifier for the static request data fields.
+
   ```js
   // prevent changing the "role" field
   @request.data.role:isset = false
   ```
 
 - Added `:length` modifier for the arrayable request data and collection fields (`select`, `file`, `relation`).
+
   ```js
   // example submitted data: {"someSelectField": ["val1", "val2"]}
   @request.data.someSelectField:length = 2
@@ -78,6 +82,7 @@
   ```
 
 - Added `:each` modifier support for the multi-`select` request data and collection field.
+
   ```js
   // check if all selected rows has "pb_" prefix
   roles:each ~ 'pb_%'
@@ -115,11 +120,9 @@
 
 - Other minor improvements.
 
-
 ## v0.10.4
 
 - Fixed `Record.MergeExpand` panic when the main model expand map is not initialized ([#1365](https://github.com/pocketbase/pocketbase/issues/1365)).
-
 
 ## v0.10.3
 
@@ -129,17 +132,14 @@
 
 - Excluded `collectionId` and `collectionName` from the displayable relation props list ([1322](https://github.com/pocketbase/pocketbase/issues/1322); thanks @dhall2).
 
-
 ## v0.10.2
 
 - Fixed nested multiple expands with shared path ([#586](https://github.com/pocketbase/pocketbase/issues/586#issuecomment-1357784227)).
   A new helper method `models.Record.MergeExpand(map[string]any)` was also added to simplify the expand handling and unit testing.
 
-
 ## v0.10.1
 
 - Fixed nested transactions deadlock when authenticating with OAuth2 ([#1291](https://github.com/pocketbase/pocketbase/issues/1291)).
-
 
 ## v0.10.0
 
@@ -160,6 +160,7 @@
 - Refactored the `core.app.Bootstrap()` to be called before starting the cobra commands ([#1267](https://github.com/pocketbase/pocketbase/discussions/1267)).
 
 - ! Changed `pocketbase.NewWithConfig(config Config)` to `pocketbase.NewWithConfig(config *Config)` and added 4 new config settings:
+
   ```go
   DataMaxOpenConns int // default to core.DefaultDataMaxOpenConns
   DataMaxIdleConns int // default to core.DefaultDataMaxIdleConns
@@ -175,6 +176,7 @@
 
 - Added generic file resource struct that allows loading and uploading file content from
   different sources (at the moment multipart/form-data requests and from the local filesystem).
+
   ```
   filesystem.File{}
   filesystem.NewFileFromPath(path)
@@ -183,6 +185,7 @@
   ```
 
 - Refactored `forms.RecordUpsert` to allow more easily loading and removing files programmatically.
+
   ```
   forms.RecordUpsert.AddFiles(key, filesystem.File...) // add new filesystem.File to the form for upload
   forms.RecordUpsert.RemoveFiles(key, filenames...)     // marks the filenames for deletion
@@ -190,11 +193,9 @@
 
 - Trigger the `password` validators if any of the others password change fields is set.
 
-
 ## v0.9.2
 
 - Fixed field column name conflict on record deletion ([#1220](https://github.com/pocketbase/pocketbase/discussions/1220)).
-
 
 ## v0.9.1
 
@@ -210,7 +211,6 @@
 
 - Updated the GitHub goreleaser action to use go 1.19.4 since it comes with [some security fixes](https://github.com/golang/go/issues?q=milestone%3AGo1.19.4+label%3ACherryPickApproved).
 
-
 ## v0.9.0
 
 - Fixed concurrent multi-relation cascade update/delete ([#1138](https://github.com/pocketbase/pocketbase/issues/1138)).
@@ -224,6 +224,7 @@
 - Added `Record.OriginalCopy()` method that returns a new `Record` copy populated with the initially loaded record data (useful if you want to compare old and new field values).
 
 - Added new event hooks:
+
   ```go
   app.OnBeforeBootstrap()
   app.OnAfterBootstrap()
@@ -247,6 +248,7 @@
   ```
 
 - The original uploaded file name is now stored as metadata under the `original_filename` key. It could be accessed via:
+
   ```go
   fs, _ := app.NewFilesystem()
   defer fs.Close()
@@ -257,6 +259,7 @@
 
 - Added support for `Partial/Range` file requests ([#1125](https://github.com/pocketbase/pocketbase/issues/1125)).
   This is a minor breaking change if you are using `filesystem.Serve` (eg. as part of a custom `OnFileDownloadRequest` hook):
+
   ```go
   // old
   filesystem.Serve(res, e.ServedPath, e.ServedName)
@@ -271,6 +274,7 @@
 
   The `migrate` command is available by default for the prebuilt executable,
   but if you use PocketBase as framework you need register it manually:
+
   ```go
   migrationsDir := "" // default to "pb_migrations" (for js) and "migrations" (for go)
 
@@ -296,30 +300,36 @@
   Also note that the auto generated migrations are granural (in contrast to the `migrate collections` snapshot command)
   and allow multiple developers to do changes on the collections independently (even editing the same collection) miniziming the eventual merge conflicts.
   Here is a sample JS migration file that will be generated if you for example edit a single collection name:
+
   ```js
   // pb_migrations/1669663597_updated_posts_old.js
-  migrate((db) => {
-    // up
-    const dao = new Dao(db)
-    const collection = dao.findCollectionByNameOrId("lngf8rb3dqu86r3")
-    collection.name = "posts_new"
-    return dao.saveCollection(collection)
-  }, (db) => {
-    // down
-    const dao = new Dao(db)
-    const collection = dao.findCollectionByNameOrId("lngf8rb3dqu86r3")
-    collection.name = "posts_old"
-    return dao.saveCollection(collection)
-  })
+  migrate(
+    (db) => {
+      // up
+      const dao = new Dao(db);
+      const collection = dao.findCollectionByNameOrId('lngf8rb3dqu86r3');
+      collection.name = 'posts_new';
+      return dao.saveCollection(collection);
+    },
+    (db) => {
+      // down
+      const dao = new Dao(db);
+      const collection = dao.findCollectionByNameOrId('lngf8rb3dqu86r3');
+      collection.name = 'posts_old';
+      return dao.saveCollection(collection);
+    }
+  );
   ```
 
 - Added new `Dao` helpers to make it easier fetching and updating the app settings from a migration:
+
   ```go
   dao.FindSettings([optEncryptionKey])
   dao.SaveSettings(newSettings, [optEncryptionKey])
   ```
 
 - Moved `core.Settings` to `models/settings.Settings`:
+
   ```
   core.Settings{}           -> settings.Settings{}
   core.NewSettings()        -> settings.New()
@@ -332,6 +342,7 @@
   ```
 
 - Changed the `mailer.Mailer` interface (**minor breaking if you are sending custom emails**):
+
   ```go
   // Old:
   app.NewMailClient().Send(from, to, subject, html, attachments?)
@@ -350,10 +361,10 @@
     Text: "custom plain text version",
   })
   ```
+
   The new `*mailer.Message` struct is also now a member of the `MailerRecordEvent` and `MailerAdminEvent` events.
 
 - Other minor UI fixes and improvements
-
 
 ## v0.8.0
 
@@ -419,6 +430,7 @@ The upgrade command:
 - Changes all `user` type fields to `relation` and update the references to point to the new user ids.
 - Renames all `@collection.profiles.*`, `@request.user.*` and `@request.user.profile.*` filters to `@collection.users.*` and `@request.auth.*`.
 - Appends `2` to all **schema field names** and **api filter rules** that conflicts with the new system reserved ones:
+
   ```
   collectionId   => collectionId2
   collectionName => collectionName2
@@ -440,6 +452,7 @@ The upgrade command:
 Please check the individual SDK package changelog and apply the necessary changes in your code:
 
 - [**JavaScript SDK changelog**](https://github.com/pocketbase/js-sdk/blob/master/CHANGELOG.md)
+
   ```sh
   npm install pocketbase@latest --save
   ```
@@ -629,6 +642,7 @@ Please check the individual SDK package changelog and apply the necessary change
   </table>
 
 - To prevent confusion with the auth method responses, the following endpoints now returns 204 with empty body (previously 200 with token and auth model):
+
   ```
   POST /api/admins/confirm-password-reset
   POST /api/collections/:collection/confirm-password-reset
@@ -841,6 +855,7 @@ Please check the individual SDK package changelog and apply the necessary change
   </table>
 
 - Added new auth collection `models.Record` helpers:
+
   ```go
   func (m *Record) Username() string
   func (m *Record) SetUsername(username string) error
@@ -863,6 +878,7 @@ Please check the individual SDK package changelog and apply the necessary change
   ```
 
 - Added option to return serialized custom `models.Record` fields data:
+
   ```go
   func (m *Record) UnknownData() map[string]any
   func (m *Record) WithUnkownData(state bool)
@@ -1006,11 +1022,12 @@ Please check the individual SDK package changelog and apply the necessary change
   </table>
 
 - Marked as "Deprecated" and will be removed in v0.9+:
-    ```
-    core.Settings.EmailAuth{}
-    core.EmailAuthConfig{}
-    schema.FieldTypeUser
-    schema.UserOptions{}
-    ```
+
+  ```
+  core.Settings.EmailAuth{}
+  core.EmailAuthConfig{}
+  schema.FieldTypeUser
+  schema.UserOptions{}
+  ```
 
 - The second argument of `apis.StaticDirectoryHandler(fileSystem, enableIndexFallback)` now is used to enable/disable index.html forwarding on missing file (eg. in case of SPA).
