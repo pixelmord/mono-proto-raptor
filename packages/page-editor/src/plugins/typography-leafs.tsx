@@ -5,7 +5,7 @@ import { EditorPlugin } from '../utils/compose-plugins';
 import { getActiveStyles, toggleMark } from '../utils/editor-utils';
 
 const LEAF_STYLES = ['bold', 'italic', 'underline', 'code'];
-export const typographyLeafsPlugin: EditorPlugin = (editableProps, editor) => {
+export const typographyLeafsPlugin: EditorPlugin = (editableProps) => {
   return {
     toolbarTools: LEAF_STYLES.map((style) => <LeafButton leaf_style={style} />),
     editableProps: {

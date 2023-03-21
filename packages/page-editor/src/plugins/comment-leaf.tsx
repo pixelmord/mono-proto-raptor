@@ -1,5 +1,4 @@
 import { computePosition } from '@floating-ui/dom';
-import { RefObject, useRef } from 'react';
 import { Editor, Range } from 'slate';
 import { ReactEditor, useSlate } from 'slate-react';
 import { Button } from 'ui';
@@ -8,14 +7,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { EditorPlugin } from '../utils/compose-plugins';
 import { getActiveStyles } from '../utils/editor-utils';
 
-export const commentLeafPlugin: EditorPlugin = (editableProps, editor, refs) => {
+export const commentLeafPlugin: EditorPlugin = (editableProps, _editor, refs) => {
   const { popoverRef } = refs;
   return {
     toolbarTools: [<CommentButton />],
     editableProps: {
       ...editableProps,
       renderLeaf: (props) => {
-        const { leaf, children, attributes } = props;
+        const { leaf, children } = props;
         let el = <>{children}</>;
         if (leaf.commentIds?.length) {
           el = (

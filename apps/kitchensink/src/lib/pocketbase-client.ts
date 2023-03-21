@@ -1,3 +1,3 @@
-import PocketBase, { Admin } from 'pocketbase';
+import PocketBase from 'pocketbase';
 
 export const pb = new PocketBase(process.env.NEXT_PUBLIC_POCKETBASE_URL as string);

@@ -9,7 +9,7 @@ import '@/styles/globals.css';
 const lato = Lato({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-lato' });
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${lato.variable} light`}>
+    <html className={`${lato.variable} light`} lang="en">
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black dark:text-base-200">
         <header>
           <nav>

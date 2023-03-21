@@ -1,5 +1,5 @@
 import EditorJS, { API, OutputData } from '@editorjs/editorjs';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface EditorProps {
   content?: OutputData;

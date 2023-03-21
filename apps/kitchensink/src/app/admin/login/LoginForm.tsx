@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Button, H2 } from 'ui';
+import { Button } from 'ui';
 
 import { FormElementText } from '@/components/Form';
 import fetchJson from '@/lib/fetchJson';
@@ -12,7 +12,7 @@ export default function LoginForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<LoginData>({
     resolver: zodResolver(LoginDataSchema),
   });
