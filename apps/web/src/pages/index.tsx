@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Button } from 'ui';
+import { Button } from 'prestyled-elements';
 
 export default function Home() {
   return (

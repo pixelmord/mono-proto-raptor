@@ -1,6 +1,6 @@
 import React from 'react';
 import { FieldError } from 'react-hook-form';
-import { FormFieldText, Label } from 'ui';
+import { FormFieldText, Label } from 'prestyled-elements';
 
 export type FormElementTextProps = {
   label?: string;

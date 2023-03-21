@@ -23,10 +23,10 @@
     "@floating-ui/dom": "^1.2.5",
     "@floating-ui/react": "^0.22.0",
     "is-hotkey": "^0.2.0",
+    "prestyled-elements": "workspace:*",
     "slate": "^0.91.4",
     "slate-history": "^0.86.0",
     "slate-react": "^0.92.0",
-    "ui": "workspace:*",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

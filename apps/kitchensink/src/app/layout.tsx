@@ -2,6 +2,7 @@ import { Lato } from 'next/font/google';
 import Link from 'next/link';
 
 import '@/styles/globals.css';
+
 import { Metadata } from 'next';
 
 // include styles from the ui package

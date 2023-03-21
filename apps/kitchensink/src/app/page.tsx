@@ -1,4 +1,4 @@
-import { Button, H1 } from 'ui';
+import { Button, H1 } from 'prestyled-elements';
 
 export default function Home() {
   return (

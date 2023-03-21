@@ -1,7 +1,7 @@
 import { computePosition } from '@floating-ui/dom';
 import { Editor, Range } from 'slate';
 import { ReactEditor, useSlate } from 'slate-react';
-import { Button } from 'ui';
+import { Button } from 'prestyled-elements';
 import { v4 as uuidv4 } from 'uuid';
 
 import { EditorPlugin } from '../utils/compose-plugins';
