@@ -15,6 +15,7 @@ importers:
       prettier: ^2.8.6
       prettier-config: workspace:*
       turbo: ^1.8.5
+      typescript: ^5.0.2
       typesync: ^0.10.0
     devDependencies:
       '@plasmohq/prettier-plugin-sort-imports': 3.6.3_prettier@2.8.6
@@ -28,6 +29,7 @@ importers:
       prettier: 2.8.6
       prettier-config: link:packages/prettier-config
       turbo: 1.8.5
+      typescript: 5.0.2
       typesync: 0.10.0
 
   apps/kitchensink:
