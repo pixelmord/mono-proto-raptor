@@ -1,12 +1,12 @@
 import type { Meta, StoryFn } from '@storybook/react';
-import { Table, TableProps } from '@prestyled/data-table';
+import { Table, TableProps } from '@prestyled/elements';
 import { Ref } from 'react';
 const meta: Meta<typeof Table> = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/7.0/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: '@prestyled/data-table/Table',
+  title: '@prestyled/elements/Table',
   tags: ['autodocs'],
   component: Table,
 };

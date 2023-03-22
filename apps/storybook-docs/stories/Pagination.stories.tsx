@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Pagination } from '@prestyled/data-table';
+import { Pagination } from '@prestyled/elements';
 
 const meta: Meta<typeof Pagination> = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/7.0/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: '@prestyled/data-table/Pagination',
+  title: '@prestyled/elements/Pagination',
   tags: ['autodocs'],
   component: Pagination,
 };
