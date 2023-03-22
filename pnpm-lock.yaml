@@ -437,6 +437,7 @@ importers:
       jest: ^29.5.0
       jest-environment-jsdom: ^29.5.0
       jest-presets: workspace:*
+      postcss: ^8.4.21
       react: ^18.2.0
       react-dom: ^18.2.0
       tailwind-config: workspace:*
@@ -458,6 +459,7 @@ importers:
       jest: 29.5.0
       jest-environment-jsdom: 29.5.0
       jest-presets: link:../../packages-config/jest-presets
+      postcss: 8.4.21
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tailwind-config: link:../../packages-config/tailwind-config
