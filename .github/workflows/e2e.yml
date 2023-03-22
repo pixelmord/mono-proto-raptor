@@ -25,5 +25,5 @@ on:
 
       - name: Run tests
         run: pnpm test:e2e
-          env:
-            BASE_URL: ${{ github.event.deployment_status.target_url }}
+        env:
+          BASE_URL: ${{ github.event.deployment_status.target_url }}
