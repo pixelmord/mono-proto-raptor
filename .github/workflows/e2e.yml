@@ -1,14 +1,21 @@
 # We are using Playwright but you may use your E2E framework of choice
 name: Playwright Tests
 
-on:
-  deployment_status:
+on: [deployment_status]
 
 jobs:
-  run-e2e-tests:
+  test:
+    name: Run E2E Tests
+    timeout-minutes: 15
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ github.event.deployment_status.target_url }}
     steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - uses: pnpm/action-setup@v2.2.4
         with:
           version: 7.25.0
@@ -26,5 +33,3 @@ jobs:
 
       - name: Run tests
         run: pnpm test:e2e
-        env:
-          BASE_URL: ${{ github.event.deployment_status.target_url }}
