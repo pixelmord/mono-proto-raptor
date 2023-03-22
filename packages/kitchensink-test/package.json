@@ -3,22 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "watch \"playwright test --quiet --reporter=list\" src ../../apps/kitchensink/src",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
-    "test:e2e": "playwright test --reporter=list"
+    "test:e2e": "playwright test --reporter=list",
+    "watch": "watch \"playwright test --quiet --reporter=list\" src ../../apps/kitchensink/src"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "kitchensink": "workspace:*"
   },
   "devDependencies": {
-    "@playwright/test": "^1.29.2",
-    "@types/eslint": "^8.4.10",
-    "@types/node": "^18.11.9",
-    "eslint": "^8.31.0",
+    "@playwright/test": "^1.31.2",
+    "@types/eslint": "^8.21.3",
+    "@types/node": "^18.15.5",
+    "@types/watch": "^1.0.3",
+    "eslint": "^8.36.0",
     "eslint-config-custom": "workspace:*",
-    "playwright-watch": "^1.3.23",
     "tsconfig": "workspace:*",
-    "typescript": "^4.9.4",
+    "typescript": "^5.0.2",
     "watch": "^1.0.2"
   }
 }

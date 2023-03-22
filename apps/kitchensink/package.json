@@ -7,24 +7,35 @@
     "dev": "next dev --port 3001",
     "lint": "next lint",
     "start": "next start",
-    "start:test": "next start --port 3001"
+    "start:test": "next start --port 3001",
+    "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "next": "^13.1.2",
+    "@hookform/resolvers": "^3.0.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "iron-session": "^6.3.1",
+    "next": "^13.2.4",
+    "page-editor": "workspace:*",
+    "pocketbase": "^0.12.1",
+    "post-editor": "workspace:*",
+    "prestyled-elements": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "workspace:*"
+    "react-hook-form": "^7.43.7",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.10",
-    "autoprefixer": "^10.4.13",
+    "@types/node": "^18.15.5",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "autoprefixer": "^10.4.14",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
+    "prettier-config": "workspace:*",
     "tailwind-config": "workspace:*",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.2.7",
     "tsconfig": "workspace:*",
-    "typescript": "^4.9.4"
+    "typescript": "^5.0.2"
   }
 }

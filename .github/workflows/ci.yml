@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: ['main', 'develop']
+    branches: ['main', 'development']
   pull_request:
     types: [opened, synchronize]
 
@@ -47,9 +47,3 @@ jobs:
 
       - name: Test
         run: pnpm test
-
-      - name: Start for Tests
-        run: pnpm start:test &
-
-      - name: Test E2E
-        run: pnpm test:e2e

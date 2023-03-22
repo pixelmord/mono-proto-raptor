@@ -2,35 +2,53 @@
   "private": true,
   "workspaces": [
     "packages/*",
+    "packages-config/*",
+    "packages-ui/*",
+    "packages-node/*",
     "apps/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev --no-cache --continue",
+    "dev": "turbo run dev --no-cache --continue --concurrency=20",
     "dev:kitchensink": "turbo run dev --no-cache --scope='kitchensink' --continue",
     "dev:web": "turbo run dev --no-cache --scope='web' --continue",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
     "lint": "turbo run lint",
+    "prepare": "husky install",
     "start": "turbo run start",
     "start:kitchensink": "turbo run start --scope='kitchensink'",
     "start:test": "turbo run start:test",
     "start:web": "turbo run start --scope='web'",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
+    "test:e2e:kitchensink": "turbo run test:e2e --scope='kitchensink'",
+    "test:e2e:web": "turbo run test:e2e --scope='web'",
     "type-check": "turbo run type-check"
   },
+  "lint-staged": {
+    "apps/**/*.{js,ts,tsx,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "packages/**/*.{js,ts,tsx,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
   "devDependencies": {
-    "@plasmohq/prettier-plugin-sort-imports": "^3.6.1",
-    "@types/eslint": "^8.4.10",
+    "@types/eslint": "^8.21.3",
     "@types/prettier": "^2.7.2",
-    "eslint": "^8.32.0",
+    "eslint": "^8.36.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.8.3",
-    "prettier-plugin-packagejson": "^2.4.0",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "turbo": "latest",
-    "typesync": "^0.9.2"
+    "husky": "^8.0.3",
+    "hygen": "^6.2.11",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.6",
+    "prettier-config": "workspace:*",
+    "turbo": "^1.8.5",
+    "typescript": "^5.0.2",
+    "typesync": "^0.10.0"
   },
   "packageManager": "pnpm@7.25.0"
 }

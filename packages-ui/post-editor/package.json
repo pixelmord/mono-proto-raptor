@@ -1,0 +1,54 @@
+{
+  "name": "post-editor",
+  "version": "0.0.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./dist",
+    "./styles.css": "./dist/styles.css"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react && tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "clean": "rm -rf dist",
+    "dev": "concurrently \"tsup src/index.tsx --format esm,cjs --dts --external react --watch\" \"tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch\"",
+    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "test": "jest --passWithNoTests",
+    "type-check": "tsc --pretty --noEmit"
+  },
+  "jest": {
+    "preset": "jest-presets/jest/node"
+  },
+  "dependencies": {
+    "@editorjs/code": "^2.8.0",
+    "@editorjs/editorjs": "^2.26.5",
+    "@editorjs/embed": "^2.5.3",
+    "@editorjs/header": "^2.7.0",
+    "@editorjs/inline-code": "^1.4.0",
+    "@editorjs/link": "^2.5.0",
+    "@editorjs/list": "^1.8.0",
+    "@editorjs/table": "^2.2.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/eslint": "^8.21.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "class-variance-authority": "^0.4.0",
+    "concurrently": "^7.2.2",
+    "eslint": "^8.36.0",
+    "eslint-config-custom": "workspace:*",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-presets": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-config": "workspace:*",
+    "tailwindcss": "^3.2.7",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2"
+  }
+}
