@@ -1,6 +1,6 @@
 import { FC, Key, ReactElement, useState } from 'react';
 import { SelectableTable, SelectableTableProps } from '../SelectableTable';
-import { Pagination } from '../Pagination';
+import { Pagination } from '@prestyled/elements';
 
 type Column = { header: string | ReactElement; key: string | number };
 type Datum = Record<Key, ReactElement>;
@@ -44,7 +44,7 @@ export const DataTable: FC<DataTableProps> = ({
       <Pagination
         totalPages={totalItems / itemsPerPage}
         currentPage={currentPage}
-        onPageChange={(page) => handlePageChange(page)}
+        onPageChange={(page: number) => handlePageChange(page)}
         className="mx-auto"
       />
     </>

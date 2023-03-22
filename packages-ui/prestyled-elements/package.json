@@ -20,6 +20,9 @@
   "jest": {
     "preset": "jest-presets/jest/node"
   },
+  "dependencies": {
+    "tailwind-merge": "^1.10.0"
+  },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

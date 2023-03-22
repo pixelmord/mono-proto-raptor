@@ -1,5 +1,6 @@
 {
   "extends": "tsconfig/react-library.json",
   "include": ["."],
+  "compilerOptions": { "target": "ESNext" },
   "exclude": ["dist", "build", "node_modules"]
 }

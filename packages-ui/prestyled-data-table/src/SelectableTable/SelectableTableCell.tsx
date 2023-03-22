@@ -1,7 +1,7 @@
 import { mergeProps, useFocusRing, useTableCell } from 'react-aria';
-import { Table } from '../Table';
+import { Table } from '@prestyled/elements';
 import { FC, useRef } from 'react';
-import { TableCellProps } from '../Table/TableCell';
+import type { TableCellProps } from '@prestyled/elements';
 
 export type SelectableTableCellProps = TableCellProps & {
   cell: any;

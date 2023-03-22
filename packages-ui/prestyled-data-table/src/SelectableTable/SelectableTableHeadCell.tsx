@@ -1,7 +1,6 @@
 import { FC, useRef } from 'react';
 import { mergeProps, useFocusRing, useTableColumnHeader } from 'react-aria';
-import { TableHeadCellProps } from '../Table/TableHeadCell';
-import { Table } from '../Table';
+import { TableHeadCellProps, Table } from '@prestyled/elements';
 import { TableState } from 'react-stately';
 import { GridNode } from '@react-types/grid';
 
@@ -11,6 +10,7 @@ export type SelectableTableHeadCellProps = TableHeadCellProps & {
 };
 export const SelectableTableHeadCell: FC<SelectableTableHeadCellProps> = ({ column, state }) => {
   const ref = useRef<HTMLTableCellElement>(null);
+
   const { columnHeaderProps } = useTableColumnHeader({ node: column }, state, ref);
   const { isFocusVisible, focusProps } = useFocusRing();
   const arrowIcon = state.sortDescriptor?.direction === 'ascending' ? '▲' : '▼';

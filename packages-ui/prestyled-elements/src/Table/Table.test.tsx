@@ -32,7 +32,8 @@ describe('Components / Table', () => {
   });
 });
 
-const TestTable: FC<TableProps & { ref?: Ref<HTMLTableElement> }> = (props) => {
+const TestTable: FC<TableProps & { ref?: Ref<HTMLTableElement>; striped?: boolean; hoverable?: boolean }> = (props) => {
+  const { striped, hoverable } = props;
   const columns: { header: string | ReactElement; accessor: string }[] = [
     {
       header: 'First Name',
@@ -75,7 +76,12 @@ const TestTable: FC<TableProps & { ref?: Ref<HTMLTableElement> }> = (props) => {
       </Table.Head>
       <Table.Body className="divide-y">
         {data.map((datum, index) => (
-          <Table.Row key={index} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+          <Table.Row
+            key={index}
+            striped={striped}
+            hoverable={hoverable}
+            className="bg-white dark:border-gray-700 dark:bg-gray-800"
+          >
             {columns.map((col, index) => (
               <Table.Cell key={index}>{datum[col.accessor]}</Table.Cell>
             ))}

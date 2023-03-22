@@ -1,7 +1,7 @@
 import { AriaTableProps, SSRProvider, useTable } from 'react-aria';
 import { Cell, Column, Row, TableBody, TableHeader, TableStateProps, useTableState } from 'react-stately';
 import { FC, useRef } from 'react';
-import { Table, TableProps } from '../Table';
+import { Table, TableProps } from '@prestyled/elements';
 import { SelectableTableHeadRow } from './SelectableTableHeadRow';
 import { SelectableTableHeadCell } from './SelectableTableHeadCell';
 import { SelectableTableRow } from './SelectableTableRow';
@@ -10,7 +10,12 @@ import { SelectableTableCheckboxCell } from './SelectableTableCheckboxCell';
 import { SelectaleTableSelectAllCell } from './SelectableTableSelectAllCell';
 import { GridNode } from '@react-types/grid';
 
-export type SelectableTableProps = TableStateProps<object> & AriaTableProps<object> & TableProps;
+export type SelectableTableProps = TableStateProps<object> &
+  AriaTableProps<object> &
+  TableProps & {
+    hoverable?: boolean;
+    striped?: boolean;
+  };
 const SelectableTableComponent: FC<SelectableTableProps> = (props) => {
   const { selectionMode, selectionBehavior, striped, hoverable } = props;
   const state = useTableState({
@@ -24,7 +29,7 @@ const SelectableTableComponent: FC<SelectableTableProps> = (props) => {
 
   return (
     <SSRProvider>
-      <Table {...gridProps} striped={striped} hoverable={hoverable} ref={ref} style={{ borderCollapse: 'collapse' }}>
+      <Table {...gridProps} ref={ref} style={{ borderCollapse: 'collapse' }}>
         <Table.Head>
           {collection.headerRows.map((headerRow) => (
             <SelectableTableHeadRow key={headerRow.key} item={headerRow} state={state}>
@@ -40,7 +45,7 @@ const SelectableTableComponent: FC<SelectableTableProps> = (props) => {
         </Table.Head>
         <Table.Body>
           {[...collection.body.childNodes].map((row) => (
-            <SelectableTableRow key={row.key} item={row} state={state}>
+            <SelectableTableRow striped={striped} hoverable={hoverable} key={row.key} item={row} state={state}>
               {[...row.childNodes].map((cell) =>
                 cell.props.isSelectionCell ? (
                   <SelectableTableCheckboxCell
