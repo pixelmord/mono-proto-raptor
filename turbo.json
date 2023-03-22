@@ -23,7 +23,9 @@
       "outputs": ["coverage/**"],
       "dependsOn": []
     },
-    "test:e2e": {},
+    "test:e2e": {
+      "env": ["BASE_URL"]
+    },
     "type-check": {
       "outputs": []
     },
