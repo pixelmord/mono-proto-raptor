@@ -17,7 +17,7 @@ module.exports = {
         ])
         .then(({ path, project }) => {
           resolve({
-            appPath: `/${project}/src/app/${path}`,
+            appPath: `apps/${project}/src/app/${path}`,
           });
         });
     });
