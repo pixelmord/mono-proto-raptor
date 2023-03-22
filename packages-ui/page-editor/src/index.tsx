@@ -1,3 +1,3 @@
 export * from './PageEditor';
 export * from './plugins';
-export * from './types.d';
+export * from './types';

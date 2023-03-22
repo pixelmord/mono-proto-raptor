@@ -1,5 +1,5 @@
 import { useSlate } from 'slate-react';
-import { Button } from 'prestyled-elements';
+import { Button } from '@prestyled/elements';
 
 import { EditorPlugin } from '../utils/compose-plugins';
 import { getActiveStyles, toggleMark } from '../utils/editor-utils';

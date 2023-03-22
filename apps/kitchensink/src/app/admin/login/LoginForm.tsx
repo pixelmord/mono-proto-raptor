@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Button } from 'prestyled-elements';
+import { Button } from '@prestyled/elements';
 
 import { FormElementText } from '@/components/Form';
 import fetchJson from '@/lib/fetchJson';

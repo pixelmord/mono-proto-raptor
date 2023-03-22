@@ -1,6 +1,4 @@
 import '../styles/globals.css';
-// include styles from the ui package
-import 'prestyled-elements/styles.css';
 
 import type { AppProps } from 'next/app';
 

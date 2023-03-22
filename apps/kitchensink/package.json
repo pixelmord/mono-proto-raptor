@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
+    "@prestyled/elements": "workspace:*",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "iron-session": "^6.3.1",
@@ -19,7 +20,6 @@
     "page-editor": "workspace:*",
     "pocketbase": "^0.12.1",
     "post-editor": "workspace:*",
-    "prestyled-elements": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.7",

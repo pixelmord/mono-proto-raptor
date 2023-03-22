@@ -9,6 +9,7 @@ module.exports = {
     `src/**/*.{ts,tsx}`,
     // include packages if not transpiling
     '../../packages/**/*.{ts,tsx}',
+    '../../packages-*/**/*.{ts,tsx}',
   ],
   darkMode: 'class',
   theme: {

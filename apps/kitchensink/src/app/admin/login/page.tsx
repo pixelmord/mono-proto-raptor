@@ -1,4 +1,4 @@
-import { H1 } from 'prestyled-elements';
+import { H1 } from '@prestyled/elements';
 
 import LoginForm from './LoginForm';
 
