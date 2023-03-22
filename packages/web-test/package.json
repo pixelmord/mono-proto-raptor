@@ -8,6 +8,7 @@
     "watch": "watch \"playwright test --quiet --reporter=list\" src ../../apps/web/src"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "web": "workspace:*"
   },
   "devDependencies": {

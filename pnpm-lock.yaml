@@ -214,6 +214,7 @@ importers:
       '@types/eslint': ^8.21.3
       '@types/node': ^18.15.5
       '@types/watch': ^1.0.3
+      dotenv: ^16.0.3
       eslint: ^8.36.0
       eslint-config-custom: workspace:*
       kitchensink: workspace:*
@@ -221,6 +222,7 @@ importers:
       typescript: ^5.0.2
       watch: ^1.0.2
     dependencies:
+      dotenv: 16.0.3
       kitchensink: link:../../apps/kitchensink
     devDependencies:
       '@playwright/test': 1.31.2
@@ -444,6 +446,7 @@ importers:
       '@types/eslint': ^8.21.3
       '@types/node': ^18.15.5
       '@types/watch': ^1.0.3
+      dotenv: ^16.0.3
       eslint: ^8.36.0
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
@@ -451,6 +454,7 @@ importers:
       watch: ^1.0.2
       web: workspace:*
     dependencies:
+      dotenv: 16.0.3
       web: link:../../apps/web
     devDependencies:
       '@playwright/test': 1.31.2
@@ -6323,7 +6327,6 @@ packages:
   /dotenv/16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
-    dev: true
 
   /duplexify/3.7.1:
     resolution: {integrity: sha512-07z8uv2wMyS51kKhD1KsdXJg5WQ6t93RneqRxUHnskXVtlYYkLqM0gqStQZ3pj073g687jPCHrqNfCzawLYh5g==}

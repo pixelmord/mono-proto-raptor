@@ -22,6 +22,8 @@
     "start:web": "turbo run start --scope='web'",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
+    "test:e2e:kitchensink": "turbo run test:e2e --scope='kitchensink'",
+    "test:e2e:web": "turbo run test:e2e --scope='web'",
     "type-check": "turbo run type-check"
   },
   "lint-staged": {

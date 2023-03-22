@@ -8,6 +8,7 @@
     "watch": "watch \"playwright test --quiet --reporter=list\" src ../../apps/kitchensink/src"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "kitchensink": "workspace:*"
   },
   "devDependencies": {
