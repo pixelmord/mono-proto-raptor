@@ -33,8 +33,8 @@ jobs:
 
       - name: Run tests for kitchensink
         run: pnpm test:e2e:kitchensink
-        if: contains(github.event.deployment_status.description, 'kitchensink')
+        if: contains(github.event.deployment_status.target_url, 'kitchensink')
 
       - name: Run tests for web
         run: pnpm test:e2e:web
-        if: contains(github.event.deployment_status.description, 'web')
+        if: contains(github.event.deployment_status.target_url, 'web')
