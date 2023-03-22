@@ -8,22 +8,22 @@ on:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
-    - uses: pnpm/action-setup@v2.2.4
-      with:
-        version: 7.25.0
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7.25.0
 
-    - name: Setup Node.js environment
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        cache: 'pnpm'
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
 
-    - name: Install dependencies
-      run: pnpm install --prefer-offline --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --prefer-offline --frozen-lockfile
 
-    - run: pnpm dlx playwright install
+      - run: pnpm dlx playwright install
 
-    - name: Run tests
-        run: pnpm test:e2e
-          env:
-              BASE_URL: ${{ github.event.deployment_status.target_url }}
+      - name: Run tests
+          run: pnpm test:e2e
+            env:
+                BASE_URL: ${{ github.event.deployment_status.target_url }}
