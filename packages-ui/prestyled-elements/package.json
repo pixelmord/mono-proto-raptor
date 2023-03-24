@@ -21,6 +21,7 @@
     "preset": "jest-presets/jest/node"
   },
   "dependencies": {
+    "react-icons": "^4.8.0",
     "tailwind-merge": "^1.10.0"
   },
   "devDependencies": {

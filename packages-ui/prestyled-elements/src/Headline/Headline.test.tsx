@@ -1,5 +1,6 @@
+import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { H1 } from './Typography';
+import { H1 } from './Headline';
 import '@testing-library/jest-dom';
 describe('Typography', () => {
   it('h1 renders without crashing', () => {

@@ -25,8 +25,8 @@ export const fieldStyle = cva(
           'border-success-300',
           'focus:border-success-500',
           'focus:ring-success-500',
-          'dark:focus:border-danger-400',
-          'dark:focus:ring-danger-400',
+          'dark:focus:border-success-400',
+          'dark:focus:ring-success-400',
         ],
         error: [
           'border-danger-300',
