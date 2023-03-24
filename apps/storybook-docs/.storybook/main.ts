@@ -14,6 +14,7 @@ const config: StorybookConfig = {
         },
       },
     },
+    'storybook-addon-tailwind',
   ],
   framework: '@storybook/react-vite',
   docs: {

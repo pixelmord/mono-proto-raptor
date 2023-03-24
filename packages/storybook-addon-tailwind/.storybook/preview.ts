@@ -1,7 +1,10 @@
 import type { Preview } from '@storybook/react';
-import './styles.css';
+
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      default: 'light',
+    },
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
@@ -11,7 +14,5 @@ const preview: Preview = {
     },
   },
 };
-export const globalTypes = {
-  darkMode: true,
-};
+
 export default preview;

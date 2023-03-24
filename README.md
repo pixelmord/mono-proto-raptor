@@ -59,8 +59,6 @@ a demo that showcases features
 
 ### SEO
 
-- [ ] NextSEO pre-configured
-- [ ] Sane defaults for meta tags not included in NextSEO
 - [ ] JSON-LD for articles and website
 
 ## Content from MD files
