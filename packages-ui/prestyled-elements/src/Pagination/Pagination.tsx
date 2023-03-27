@@ -1,6 +1,6 @@
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
-import range from '../../../prestyled-data-table/src/utils/range';
+import range from '../utils/range';
 
 export type PaginationProps = PropsWithChildren<
   ComponentProps<'nav'> & {

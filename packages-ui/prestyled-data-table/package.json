@@ -12,6 +12,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
+    "clean": "rm -rf dist",
     "dev": "tsup --watch",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "test": "jest",
@@ -45,7 +46,7 @@
     "tailwind-config": "workspace:*",
     "tsconfig": "workspace:*",
     "tsup": "^6.7.0",
-    "typescript": "^5.0.2"
+    "typescript": "^4.9.5"
   },
   "peerDependencies": {
     "@prestyled/elements": "latest",

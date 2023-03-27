@@ -63,3 +63,4 @@ declare module 'slate' {
     Text: CustomText;
   }
 }
+declare module 'slate-react' {}

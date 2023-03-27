@@ -33,7 +33,7 @@ export const buttonStyle = cva(
           'focus-visible:outline-offset-2',
         ],
         tertiary: [
-          'bg-white',
+          'bg-base-200',
           'text-base-700',
           'border-transparent',
           'hover:bg-base-50',

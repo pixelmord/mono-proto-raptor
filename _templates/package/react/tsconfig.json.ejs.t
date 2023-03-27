@@ -3,6 +3,6 @@ to: "<%= h.src() %>/packages/<%= name %>/tsconfig.json"
 ---
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
+  "include": ["src"],
   "exclude": ["dist", "build", "node_modules"]
 }
