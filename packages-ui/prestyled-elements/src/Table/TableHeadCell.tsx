@@ -13,4 +13,3 @@ export const TableHeadCell = forwardRef<HTMLTableCellElement, TableHeadCellProps
   }
 );
 TableHeadCell.displayName = 'TableHeadCell';
-export default TableHeadCell;

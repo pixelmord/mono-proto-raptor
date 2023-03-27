@@ -21,9 +21,7 @@ const computedFields = {
       datePublished: doc.datePublished,
       dateModified: doc.dateUpdated,
       description: doc.summary,
-      image: doc.image
-        ? `${process.env.NEXT_PUBLIC_SITE_URL}${doc.image}`
-        : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${doc.title}`,
+      image: doc.image ? `${process.env.NEXT_PUBLIC_SITE_URL}${doc.image}` : ``,
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${doc._raw.flattenedPath}`,
       author: {
         '@type': 'Person',
@@ -69,7 +67,7 @@ export const Blog = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: 'src/content/blog',
+  contentDirPath: 'content/blog',
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],

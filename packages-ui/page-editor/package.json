@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
-    "dev": "tsup --watch",
+    "dev:aux": "tsup --watch",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "test": "jest --passWithNoTests",
     "type-check": "tsc --pretty --noEmit"

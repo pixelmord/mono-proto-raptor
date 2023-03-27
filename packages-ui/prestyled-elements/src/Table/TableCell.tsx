@@ -11,4 +11,3 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(({ chi
   );
 });
 TableCell.displayName = 'TableCell';
-export default TableCell;

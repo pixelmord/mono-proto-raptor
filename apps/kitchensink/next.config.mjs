@@ -1,4 +1,4 @@
-import { withContentlayer } from 'next-contentlayer';
+// import { withContentlayer } from 'next-contentlayer';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -7,8 +7,8 @@ const nextConfig = {
   },
   experimental: {
     appDir: true,
-    serverComponentsExternalPackages: ['shiki'],
+    serverComponentsExternalPackages: [],
   },
 };
 
-export default withContentlayer(nextConfig);
+export default nextConfig;

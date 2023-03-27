@@ -11,13 +11,15 @@ const lato = Lato({ weight: ['400', '700'], subsets: ['latin'], variable: '--fon
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`${lato.variable} light h-full overflow-hidden`} lang="en">
-      <body className="grid h-full overflow-hidden bg-zinc-50 dark:bg-black dark:text-base-200">
-        <header>
-          <nav>
-            <Link href="/">Home</Link>
-          </nav>
-        </header>
-        <main>{children}</main>
+      <body className="h-full overflow-hidden bg-zinc-50 dark:bg-black dark:text-base-200">
+        <div className="grid h-full overflow-hidden">
+          <header>
+            <nav>
+              <Link href="/">Home</Link>
+            </nav>
+          </header>
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

@@ -5,7 +5,7 @@
   "scripts": {
     "build:storybook": "storybook build",
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "dev": "storybook dev -p 6006 -s public --no-open",
+    "dev:aux": "storybook dev -p 6006 -s public --no-open",
     "start": "PORT=3008 serve storybook-static"
   },
   "dependencies": {

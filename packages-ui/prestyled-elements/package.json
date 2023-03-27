@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsup",
     "clean": "rm -rf dist",
-    "dev": "tsup --watch",
+    "dev:aux": "tsup --watch",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
     "test": "jest",
     "type-check": "tsc --pretty --noEmit"
@@ -22,6 +22,7 @@
     "preset": "jest-presets/jest/node"
   },
   "dependencies": {
+    "class-variance-authority": "^0.4.0",
     "react-icons": "^4.8.0",
     "tailwind-merge": "^1.10.0"
   },
@@ -32,7 +33,6 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "class-variance-authority": "^0.4.0",
     "concurrently": "^7.2.2",
     "eslint": "^8.36.0",
     "eslint-config-custom": "workspace:*",

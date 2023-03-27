@@ -13,4 +13,3 @@ export const TableHeadRow = forwardRef<HTMLTableRowElement, TableHeadRowProps>(
   }
 );
 TableHeadRow.displayName = 'TableHeadRow';
-export default TableHeadRow;
