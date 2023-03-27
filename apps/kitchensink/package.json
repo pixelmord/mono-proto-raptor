@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --port 3001",
+    "generate-db-types": "supabase gen types typescript --linked > ./src/types/supabase.ts",
     "lint": "next lint",
     "start": "next start",
     "start:test": "next start --port 3001",
@@ -13,16 +14,23 @@
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
     "@prestyled/elements": "workspace:*",
+    "@supabase/auth-helpers-nextjs": "^0.5.6",
+    "@supabase/supabase-js": "^2.12.1",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
+    "contentlayer": "^0.3.0",
     "iron-session": "^6.3.1",
+    "markdown-wasm": "^1.2.0",
     "next": "^13.2.4",
+    "next-contentlayer": "^0.3.0",
     "page-editor": "workspace:*",
     "pocketbase": "^0.12.1",
     "post-editor": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.7",
+    "react-wrap-balancer": "^0.4.0",
+    "shiki": "^0.14.1",
     "zod": "^3.21.4"
   },
   "devDependencies": {
@@ -33,9 +41,17 @@
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "prettier-config": "workspace:*",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-pretty-code": "^0.9.4",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.2.7",
     "tsconfig": "workspace:*",
-    "typescript": "^5.0.2"
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "esbuild": "^0.17.12"
   }
 }
