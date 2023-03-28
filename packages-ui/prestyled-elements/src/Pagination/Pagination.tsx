@@ -41,7 +41,7 @@ export const Pagination: FC<PaginationProps> = ({
         <li>
           <button
             type="button"
-            className="ml-0 rounded-l-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 ml-0 rounded-l-lg border bg-white py-2 px-3 leading-tight dark:hover:text-white"
             onClick={goToPreviousPage}
           >
             {previousLabel}
@@ -52,9 +52,9 @@ export const Pagination: FC<PaginationProps> = ({
             <button
               type="button"
               className={twMerge(
-                'w-12 border border-gray-300 bg-white py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white',
+                'hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 w-12 border bg-white py-2 leading-tight dark:hover:text-white',
                 currentPage === page &&
-                  'bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white'
+                  'dark:bg-base-700 dark:border-base-700 bg-accent-50 text-accent-600 hover:bg-accent-100 hover:text-accent-700 dark:text-white'
               )}
               onClick={() => onPageChange(page)}
             >
@@ -65,7 +65,7 @@ export const Pagination: FC<PaginationProps> = ({
         <li>
           <button
             type="button"
-            className="rounded-r-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            className="hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 rounded-r-lg border bg-white py-2 px-3 leading-tight dark:hover:text-white"
             onClick={goToNextPage}
           >
             {nextLabel}

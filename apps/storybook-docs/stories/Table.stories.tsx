@@ -60,7 +60,7 @@ const TableTemplate: Story = (args: TableProps & { ref?: Ref<HTMLTableElement> }
       </Table.Head>
       <Table.Body className="divide-y">
         {data.map((datum, index) => (
-          <Table.Row key={index} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+          <Table.Row key={index} className="bg-white dark:border-gray-700 dark:bg-base-800">
             {columns.map((col, index) => (
               <Table.Cell key={index}>{datum[col.key]}</Table.Cell>
             ))}

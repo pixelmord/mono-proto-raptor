@@ -7,7 +7,10 @@ const meta: Meta<typeof Button> = {
   title: '@prestyled/Elements/Button',
   component: Button,
   tags: ['autodocs'],
-  argTypes: { intent: { control: 'select', options: ['primary', 'secondary', 'tertiary', 'outline'] } },
+  argTypes: {
+    intent: { control: 'select', options: ['primary', 'secondary', 'tertiary', 'outline'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -18,6 +21,16 @@ export const Primary: Story = {
   args: {
     intent: 'primary',
     children: 'Button',
+    size: 'md',
+    submitting: false,
+  },
+};
+export const PrimarySubmitting: Story = {
+  args: {
+    intent: 'primary',
+    children: 'Save',
+    size: 'md',
+    submitting: true,
   },
 };
 
@@ -25,31 +38,38 @@ export const Secondary: Story = {
   args: {
     intent: 'secondary',
     children: 'Button',
+    size: 'md',
   },
 };
 export const Tertiary: Story = {
   args: {
     intent: 'tertiary',
     children: 'Button',
+    size: 'md',
   },
 };
 export const Outline: Story = {
   args: {
     intent: 'outline',
     children: 'Button',
+    size: 'md',
   },
 };
-
-export const Large: Story = {
+export const XSmall: Story = {
   args: {
-    size: 'large',
-    children: 'Large Button',
+    size: 'xs',
+    children: 'XSmall Button',
   },
 };
-
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: 'sm',
     children: 'Small Button',
+  },
+};
+export const Large: Story = {
+  args: {
+    size: 'lg',
+    children: 'Large Button',
   },
 };

@@ -8,9 +8,9 @@ export type TableRowProps = PropsWithChildren<ComponentProps<'tr'>> & {
 export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ children, className, ...props }, ref) => {
   const { hoverable, striped } = props;
   const classString = twMerge(
-    'bg-white dark:border-gray-700 dark:bg-gray-800',
-    striped && 'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700',
-    hoverable && 'hover:bg-gray-50 dark:hover:bg-gray-600',
+    'bg-white dark:border-base-700 dark:bg-base-800',
+    striped && 'odd:bg-white even:bg-base-50 odd:dark:bg-base-800 even:dark:bg-base-700',
+    hoverable && 'hover:bg-base-50 dark:hover:bg-base-600',
     className
   );
   return (
@@ -20,4 +20,3 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ childr
   );
 });
 TableRow.displayName = 'TableRow';
-

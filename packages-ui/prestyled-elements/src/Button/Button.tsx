@@ -59,38 +59,38 @@ export const buttonStyle = cva(
         ],
       },
       size: {
-        xsmall: ['text-sm', 'py-1.5', 'px-2.5'],
-        small: ['text-sm', 'py-2', 'px-3'],
-        medium: ['text-base', 'py-2', 'px-4'],
-        large: ['text-base', 'py-2', 'px-4'],
-        xlarge: ['text-base', 'py-3', 'px-6'],
+        xs: ['text-sm', 'py-1.5', 'px-2.5'],
+        sm: ['text-sm', 'py-2', 'px-3'],
+        md: ['text-base', 'py-2', 'px-4'],
+        lg: ['text-base', 'py-3', 'px-6'],
+        xl: ['text-base', 'py-4', 'px-8'],
       },
     },
     compoundVariants: [
       {
         intent: 'primary',
-        size: 'medium',
+        size: 'md',
         className: '',
       },
       {
         intent: 'secondary',
-        size: 'medium',
+        size: 'md',
         className: '',
       },
       {
         intent: 'tertiary',
-        size: 'medium',
+        size: 'md',
         className: '',
       },
       {
         intent: 'outline',
-        size: 'medium',
+        size: 'md',
         className: '',
       },
     ],
     defaultVariants: {
       intent: 'secondary',
-      size: 'medium',
+      size: 'md',
     },
   }
 );

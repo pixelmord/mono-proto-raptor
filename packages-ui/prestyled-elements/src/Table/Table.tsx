@@ -12,7 +12,7 @@ import { TableRow } from './TableRow';
 export type TableProps = PropsWithChildren<ComponentProps<'table'>>;
 
 const TableComponent = forwardRef<HTMLTableElement, TableProps>(({ children, className, ...props }, ref) => {
-  const classString = twMerge('w-full text-left text-sm text-gray-500 dark:text-gray-400', className);
+  const classString = twMerge('w-full text-left text-sm text-base-500 dark:text-base-400', className);
 
   return (
     <div data-testid="table-element" className="relative overflow-x-auto shadow-md sm:rounded-lg">

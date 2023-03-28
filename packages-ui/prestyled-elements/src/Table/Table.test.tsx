@@ -18,7 +18,7 @@ describe('Components / Table', () => {
 
     expect(rows.length).toEqual(3);
     expect(rows[0].className as string).toContain(
-      'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700'
+      'odd:bg-white even:bg-base-50 odd:dark:bg-base-800 even:dark:bg-base-700'
     );
   });
 
@@ -28,7 +28,7 @@ describe('Components / Table', () => {
     const rows = screen.getAllByTestId('table-row-element');
 
     expect(rows.length).toEqual(3);
-    expect(rows[0].className).toContain('hover:bg-gray-50 dark:hover:bg-gray-600');
+    expect(rows[0].className).toContain('hover:bg-base-50 dark:hover:bg-base-600');
   });
 });
 
@@ -44,7 +44,7 @@ const TestTable: FC<TableProps & { ref?: Ref<HTMLTableElement>; striped?: boolea
       accessor: 'lastName',
     },
     {
-      header: <span className="text-blue-500">Age</span>,
+      header: <span className="text-accent-500">Age</span>,
       accessor: 'age',
     },
   ];
@@ -80,7 +80,7 @@ const TestTable: FC<TableProps & { ref?: Ref<HTMLTableElement>; striped?: boolea
             key={index}
             striped={striped}
             hoverable={hoverable}
-            className="bg-white dark:border-gray-700 dark:bg-gray-800"
+            className="dark:bg-base-800 dark:border-base-700 bg-white"
           >
             {columns.map((col, index) => (
               <Table.Cell key={index}>{datum[col.accessor]}</Table.Cell>
