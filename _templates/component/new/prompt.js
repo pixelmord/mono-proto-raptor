@@ -12,7 +12,7 @@ module.exports = {
           {
             type: 'input',
             name: 'project',
-            message: 'App or Package Name? e.g "pixelmord"',
+            message: 'App or Package Name? e.g "kitchensink"',
           },
         ])
         .then(({ packageOrApp, project }) => {

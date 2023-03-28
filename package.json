@@ -47,14 +47,9 @@
     "prettier": "^2.8.6",
     "prettier-config": "workspace:*",
     "slugify": "^1.6.6",
-    "turbo": "^1.8.5",
-    "typescript": "^4.9.5",
+    "turbo": "^1.8.6",
+    "typescript": "^5.0.2",
     "typesync": "^0.10.0"
   },
-  "packageManager": "pnpm@7.25.0",
-  "pnpm": {
-    "overrides": {
-      "esbuild": "^0.17.12"
-    }
-  }
+  "packageManager": "pnpm@7.25.0"
 }

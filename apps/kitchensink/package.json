@@ -18,13 +18,13 @@
     "@supabase/supabase-js": "^2.12.1",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
-    "contentlayer": "^0.3.0",
+    "contentlayer": "^0.3.1",
     "iron-session": "^6.3.1",
     "markdown-wasm": "^1.2.0",
     "next": "^13.2.4",
-    "next-contentlayer": "^0.3.0",
+    "next-contentlayer": "^0.3.1",
     "page-editor": "workspace:*",
-    "pocketbase": "^0.12.1",
+    "pocketbase": "^0.13.1",
     "post-editor": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.15.5",
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.0.30",
     "@types/react-dom": "^18.0.11",
     "autoprefixer": "^10.4.14",
     "eslint-config-custom": "workspace:*",
@@ -49,6 +49,6 @@
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.2.7",
     "tsconfig": "workspace:*",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.2"
   }
 }
