@@ -1,5 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority';
-import React from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
 
 export const fieldStyle = cva(
   'block w-full rounded-md  shadow-sm  sm:text-sm bg-white text-base-800 dark:bg-base-900 dark:text-base-200',
@@ -37,44 +36,10 @@ export const fieldStyle = cva(
         ],
       },
     },
-    compoundVariants: [
-      {
-        state: 'default',
-
-        className: '',
-      },
-      {
-        state: 'info',
-
-        className: '',
-      },
-      {
-        state: 'success',
-
-        className: '',
-      },
-      {
-        state: 'warning',
-
-        className: '',
-      },
-      {
-        state: 'error',
-
-        className: '',
-      },
-    ],
+    compoundVariants: [],
     defaultVariants: {
       state: 'default',
     },
   }
 );
-
-export interface FieldProps extends React.InputHTMLAttributes<HTMLInputElement>, VariantProps<typeof fieldStyle> {}
-export const FormFieldText = React.forwardRef<HTMLInputElement, FieldProps>(
-  ({ type = 'text', state, className, ...rest }: FieldProps, ref) => {
-    className = fieldStyle({ state, className });
-    return <input type={type} className={className} {...rest} ref={ref} />;
-  }
-);
-FormFieldText.displayName = 'FormFieldText';
+export type FieldStyleProps = VariantProps<typeof fieldStyle>;
