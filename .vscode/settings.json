@@ -3,7 +3,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.workingDirectories": [{ "pattern": "apps/*/" }, { "pattern": "packages/*/" }, { "pattern": "packages-*/*/" }],
   "eslint.packageManager": "pnpm",
-  "cSpell.words": ["editorjs"],
+  "cSpell.words": ["editorjs", "testmy"],
   "todo-tree.tree.showBadges": false,
   "sqltools.connections": [
     {

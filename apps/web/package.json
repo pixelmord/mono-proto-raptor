@@ -17,15 +17,15 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.15.5",
-    "@types/react": "^18.0.30",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
     "autoprefixer": "^10.4.14",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "prettier-config": "workspace:*",
     "tailwind-config": "workspace:*",
-    "tailwindcss": "^3.2.7",
+    "tailwindcss": "^3.3.0",
     "tsconfig": "workspace:*",
     "typescript": "^5.0.2"
   }
