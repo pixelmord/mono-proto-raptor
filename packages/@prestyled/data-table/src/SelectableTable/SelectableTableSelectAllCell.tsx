@@ -1,5 +1,5 @@
 import { mergeProps, useCheckbox, useTableColumnHeader, useTableSelectAllCheckbox, VisuallyHidden } from 'react-aria';
-import { Table, Checkbox, TableHeadCellProps } from '@prestyled/elements';
+import { Table, Checkbox, TableHeadCellProps } from '../../../elements/dist';
 import { FC, useRef } from 'react';
 import { TableState, useToggleState } from 'react-stately';
 import { GridNode } from '@react-types/grid';

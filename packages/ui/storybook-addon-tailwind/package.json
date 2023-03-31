@@ -44,6 +44,7 @@
     "build:watch": "yarn build --watch",
     "clean": "rimraf ./dist",
     "dev:aux": "concurrently \"yarn build:watch\" \"yarn storybook --quiet\"",
+    "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
     "prerelease": "zx scripts/prepublish-checks.mjs",
     "release": "pnpm build && auto shipit",
     "storybook": "storybook dev -p 6006"

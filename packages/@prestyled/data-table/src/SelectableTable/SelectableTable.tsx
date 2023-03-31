@@ -1,7 +1,7 @@
 import { AriaTableProps, SSRProvider, useTable } from 'react-aria';
 import { Cell, Column, Row, TableBody, TableHeader, TableStateProps, useTableState } from 'react-stately';
 import { FC, useRef } from 'react';
-import { Table, TableProps } from '@prestyled/elements';
+import { Table, TableProps } from '../../../elements/dist';
 import { SelectableTableHeadRow } from './SelectableTableHeadRow';
 import { SelectableTableHeadCell } from './SelectableTableHeadCell';
 import { SelectableTableRow } from './SelectableTableRow';

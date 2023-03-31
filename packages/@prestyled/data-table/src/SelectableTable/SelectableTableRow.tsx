@@ -1,7 +1,7 @@
 import { useRef, FC, ComponentProps, PropsWithChildren } from 'react';
 import { Node } from '@react-types/shared';
 import { mergeProps, useFocusRing, useTableRow } from 'react-aria';
-import { Table } from '@prestyled/elements';
+import { Table } from '../../../elements/dist';
 import { TableState } from 'react-stately';
 
 export type SelectableTableRowProps = PropsWithChildren<ComponentProps<'tr'>> & {

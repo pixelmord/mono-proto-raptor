@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.dark .docs-story {
+  @apply bg-gray-900 text-white;
+}

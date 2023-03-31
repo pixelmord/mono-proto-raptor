@@ -1,6 +1,6 @@
 import { FC, Key, ReactElement, useState } from 'react';
 import { SelectableTable, SelectableTableProps } from '../SelectableTable';
-import { Pagination } from '@prestyled/elements';
+import { Pagination } from '../../../elements/dist';
 
 type Column = { header: string | ReactElement; key: string | number };
 type Datum = Record<Key, ReactElement>;

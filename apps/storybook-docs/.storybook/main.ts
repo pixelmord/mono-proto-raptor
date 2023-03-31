@@ -43,11 +43,11 @@ const config: StorybookConfig = {
         alias: [
           {
             find: '@prestyled/elements',
-            replacement: path.resolve(__dirname, '../../../packages-ui/prestyled-elements/'),
+            replacement: path.resolve(__dirname, '../../../packages/@prestyled/elements/'),
           },
           {
             find: '@prestyled/data-table',
-            replacement: path.resolve(__dirname, '../../../packages-ui/prestyled-data-table/'),
+            replacement: path.resolve(__dirname, '../../../packages/@prestyled/data-table/'),
           },
         ],
       },

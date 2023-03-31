@@ -1,6 +1,6 @@
 import { FC, useRef } from 'react';
 import { mergeProps, useFocusRing, useTableColumnHeader } from 'react-aria';
-import { TableHeadCellProps, Table } from '@prestyled/elements';
+import { TableHeadCellProps, Table } from '../../../elements/dist';
 import { TableState } from 'react-stately';
 import { GridNode } from '@react-types/grid';
 

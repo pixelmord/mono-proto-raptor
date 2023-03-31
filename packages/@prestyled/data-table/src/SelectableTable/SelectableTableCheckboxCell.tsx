@@ -1,6 +1,6 @@
 import { useCheckbox, useTableCell, useTableSelectionCheckbox, mergeProps } from 'react-aria';
 import { GridNode } from '@react-types/grid';
-import { Checkbox, Table, TableCellProps } from '@prestyled/elements';
+import { Checkbox, Table, TableCellProps } from '../../../elements/dist';
 import { FC, useRef } from 'react';
 import { TableState, useToggleState } from 'react-stately';
 export type SelectableTableCheckboxCellProps = TableCellProps & {

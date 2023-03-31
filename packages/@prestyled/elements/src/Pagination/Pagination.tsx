@@ -41,7 +41,7 @@ export const Pagination: FC<PaginationProps> = ({
         <li>
           <button
             type="button"
-            className="hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 ml-0 rounded-l-lg border bg-white py-2 px-3 leading-tight dark:hover:text-white"
+            className="hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 ml-0 rounded-l-lg border bg-white px-3 py-2 leading-tight dark:hover:text-white"
             onClick={goToPreviousPage}
           >
             {previousLabel}
@@ -65,7 +65,7 @@ export const Pagination: FC<PaginationProps> = ({
         <li>
           <button
             type="button"
-            className="hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 rounded-r-lg border bg-white py-2 px-3 leading-tight dark:hover:text-white"
+            className="hover:bg-base-100 dark:bg-base-800 dark:hover:bg-base-700 text-base-500 hover:text-base-700 dark:text-base-400 border-base-300 dark:border-base-700 rounded-r-lg border bg-white px-3 py-2 leading-tight dark:hover:text-white"
             onClick={goToNextPage}
           >
             {nextLabel}
