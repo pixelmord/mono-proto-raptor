@@ -19,7 +19,7 @@
     "type-check": "tsc --pretty --noEmit"
   },
   "jest": {
-    "preset": "jest-presets/jest/node"
+    "preset": "jest-presets/jest/react-library"
   },
   "dependencies": {
     "class-variance-authority": "^0.4.0",

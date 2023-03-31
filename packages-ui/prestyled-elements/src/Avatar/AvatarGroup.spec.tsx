@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { AvatarGroup } from './AvatarGroup';
-
+import '@testing-library/jest-dom';
 describe('AvatarGroup', () => {
   it('renders the avatar group element with the correct classname', () => {
     render(

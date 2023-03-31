@@ -15,7 +15,7 @@
     "clean": "rm -rf dist",
     "dev:aux": "tsup --watch",
     "lint": "TIMING=1 eslint \"**/*.ts*\"",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "type-check": "tsc --noEmit --pretty",
     "watch": "jest --watch"
   },

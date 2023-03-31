@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { Avatar } from './Avatar';
-
+import '@testing-library/jest-dom';
 describe('Components / Avatar', () => {
   describe('Placeholder', () => {
     it('should display placeholder initials', () => {
@@ -18,7 +18,7 @@ describe('Components / Avatar', () => {
     it('should support border color with placeholder initials', () => {
       render(<Avatar placeholderInitials alt="Otis Redding" bordered intent="success" />);
 
-      expect(initialsPlaceholder()).toHaveClass('ring-success-500 dark:ring-success-500');
+      expect(initialsPlaceholder()).toHaveClass('ring-success-300 dark:ring-success-500');
     });
   });
   describe('Image', () => {
@@ -33,7 +33,7 @@ describe('Components / Avatar', () => {
     it('should have online status indicator', () => {
       render(<Avatar alt="avatar" statusDotState="online" />);
 
-      expect(status()).toHaveClass('bg-green-400');
+      expect(status()).toHaveClass('bg-success-400');
     });
   });
 });

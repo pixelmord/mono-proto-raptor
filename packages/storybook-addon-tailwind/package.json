@@ -46,8 +46,7 @@
     "dev:aux": "concurrently \"yarn build:watch\" \"yarn storybook --quiet\"",
     "prerelease": "zx scripts/prepublish-checks.mjs",
     "release": "pnpm build && auto shipit",
-    "storybook": "storybook dev -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "storybook": "storybook dev -p 6006"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-rc.3",

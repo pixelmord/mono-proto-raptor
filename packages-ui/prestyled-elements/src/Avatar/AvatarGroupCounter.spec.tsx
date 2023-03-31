@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { AvatarGroupCounter } from './AvatarGroupCounter';
-
+import '@testing-library/jest-dom';
 describe('AvatarGroupCounter', () => {
   it('renders the counter element with the correct classname', () => {
     render(<AvatarGroupCounter total={3} href="test" className="test-class" />);
