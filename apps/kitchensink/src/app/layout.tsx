@@ -12,13 +12,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html className={`${lato.variable} light h-full overflow-hidden`} lang="en">
       <body className="h-full overflow-hidden bg-zinc-50 dark:bg-black dark:text-base-200">
-        <div className="grid h-full overflow-hidden">
+        <div className="grid h-full grid-rows-[auto_1fr_auto] overflow-hidden">
           <header>
             <nav>
               <Link href="/">Home</Link>
+              <Link href="/demo">Demo</Link>
             </nav>
           </header>
-          <main>{children}</main>
+          <main className="overflow-auto">{children}</main>
+          <footer>Footer</footer>
         </div>
       </body>
     </html>

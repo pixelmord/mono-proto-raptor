@@ -1,3 +1,2 @@
 export * from './Alert';
-export * from './alert.style';
-
+export * from './Alert.style';

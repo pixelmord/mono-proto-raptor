@@ -17,8 +17,19 @@ const config: StorybookConfig = {
     'storybook-addon-tailwind',
   ],
   framework: '@storybook/react-vite',
+  typescript: {
+    check: false,
+    reactDocgen: 'react-docgen-typescript',
+    // reactDocgenTypescriptOptions: {
+    //   shouldExtractLiteralValuesFromEnum: true,
+    //   propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    // },
+  },
   docs: {
     autodocs: 'tag',
+  },
+  core: {
+    disableTelemetry: true,
   },
   async viteFinal(config, { configType }) {
     // customize the Vite config here

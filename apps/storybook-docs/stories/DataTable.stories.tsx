@@ -1,4 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/react';
+import * as React from 'react';
 import { DataTable, DataTableProps } from '@prestyled/data-table';
 import { Key } from 'react';
 const meta: Meta<typeof DataTable> = {
