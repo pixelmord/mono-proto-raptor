@@ -1,8 +1,8 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 
-export const alertStyle = cva('flex flex-col gap-2 p-4 text-sm', {
+export const alertStyle = cva('flex flex-col gap-2 p-4 text-sm rounded', {
   variants: {
-    state: {
+    intent: {
       default: ['text-base-700', 'bg-base-100', 'border-base-500', 'dark:bg-base-700', 'dark:text-base-300'],
       info: ['text-info-700', 'bg-info-100', 'border-info-500', 'dark:bg-info-200', 'dark:text-info-800'],
       success: [
@@ -24,7 +24,7 @@ export const alertStyle = cva('flex flex-col gap-2 p-4 text-sm', {
   },
   compoundVariants: [],
   defaultVariants: {
-    state: 'default',
+    intent: 'default',
   },
 });
 export type AlertStyleProps = VariantProps<typeof alertStyle>;

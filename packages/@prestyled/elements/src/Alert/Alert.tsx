@@ -6,7 +6,7 @@ export type AlertProps = React.PropsWithChildren<React.HTMLAttributes<HTMLDivEle
     classNamesFn?: (args: AlertStyleProps) => string;
   };
 
-export const Alert: React.FC<AlertProps> = ({ className, state, classNamesFn = alertStyle, ...props }) => {
-  className = twMerge(classNamesFn({ state, className }));
+export const Alert: React.FC<AlertProps> = ({ className, intent, classNamesFn = alertStyle, ...props }) => {
+  className = twMerge(classNamesFn({ intent, className }));
   return <div className={className} {...props} />;
 };

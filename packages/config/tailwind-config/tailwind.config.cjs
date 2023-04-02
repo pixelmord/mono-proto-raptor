@@ -1,6 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable @typescript-eslint/no-var-requires
 const colors = require('tailwindcss/colors');
-
+const plugin = require('tailwindcss/plugin');
 module.exports = {
   darkMode: 'class',
   content: [
@@ -316,5 +316,14 @@ module.exports = {
       },
     }),
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    plugin(function ({ addVariant }) {
+      // Add your custom styles here
+      addVariant('has-checkbox-checked', '&:has(input:checked)');
+      addVariant('has-checkbox-unchecked', '&:has(input:not(:checked))');
+      addVariant('has-checkbox-focused', '&:has(input:focus)');
+    }),
+  ],
 };

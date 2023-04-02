@@ -11,5 +11,8 @@ export default meta;
 type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    children: 'This is an alert',
+    intent: 'info',
+  },
 };
