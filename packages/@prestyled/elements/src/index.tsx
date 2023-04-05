@@ -8,5 +8,6 @@ export * from './FormField';
 export * from './Label';
 export * from './Pagination';
 export * from './Table';
+export * from './ToggleIconButton';
 export * from './ToggleSwitch';
 export * from './Headline';

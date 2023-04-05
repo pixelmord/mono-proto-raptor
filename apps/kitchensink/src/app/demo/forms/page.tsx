@@ -2,7 +2,7 @@ import { H1, ToggleSwitch, Checkbox } from '@prestyled/elements';
 
 export default function Forms() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex h-full flex-col items-center justify-center py-2">
       <div className="mx-auto w-auto px-4 pb-8 pt-16 sm:pt-24 lg:px-8">
         <H1 className="mx-auto max-w-5xl text-center text-6xl font-extrabold leading-[1.1] tracking-tighter sm:text-7xl lg:text-8xl xl:text-8xl">
           Forms <br className="hidden lg:block" />

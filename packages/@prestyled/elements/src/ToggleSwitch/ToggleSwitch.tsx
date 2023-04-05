@@ -6,14 +6,14 @@ export const ToggleSwitch = forwardRef<HTMLInputElement, ToggleSwitchProps>(({ c
   return (
     <label className="flex items-center" data-toggle-switch-label>
       <div
-        className="pointer has-checkbox-checked:bg-accent-200 has-checkbox-checked:border-accent-300 has-checkbox-unchecked:bg-base-100 has-checkbox-unchecked:border-base-200 has-checkbox-focused:ring-2 has-checkbox-focused:ring-accent-500 has-checkbox-focused:ring-offset-2 has-checkbox-focused:ring-offset-base-100 dark:has-checkbox-focused:ring-offset-base-800 relative me-2 box-content h-5 w-10 rounded-full border-2 shadow-inner transition-colors"
+        className="has-checkbox-checked:bg-accent-200 has-checkbox-checked:border-accent-300 has-checkbox-unchecked:bg-base-100 has-checkbox-unchecked:border-base-200 has-checkbox-focused:ring-2 has-checkbox-focused:ring-accent-500 has-checkbox-focused:ring-offset-2 has-checkbox-focused:ring-offset-base-100 dark:has-checkbox-focused:ring-offset-base-800 relative me-2 box-content h-5 w-10 cursor-pointer rounded-full border-2 shadow-inner transition-colors"
         data-toggle-switch-track
       >
         <input
           ref={ref}
           type="checkbox"
           data-testid="testmy-toggle-switch-checkbox"
-          data-toggle-switch-checkbox
+          data-toggle-checkbox="switch"
           className="peer absolute h-0 w-0 opacity-0"
           {...props}
         />

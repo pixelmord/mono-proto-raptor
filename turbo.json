@@ -32,6 +32,7 @@
     "lint": {},
     "watch": {},
     "dev": {
+      "dependsOn": ["clean"],
       "cache": false,
       "persistent": true
     },
