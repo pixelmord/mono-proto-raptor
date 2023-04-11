@@ -12,14 +12,14 @@
     "web": "workspace:*"
   },
   "devDependencies": {
-    "@playwright/test": "^1.31.2",
-    "@types/eslint": "^8.21.3",
+    "@playwright/test": "^1.32.2",
+    "@types/eslint": "^8.37.0",
     "@types/node": "^18.15.11",
     "@types/watch": "^1.0.3",
     "eslint": "^8.37.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
-    "typescript": "^5.0.2",
+    "typescript": "^5.0.3",
     "watch": "^1.0.2"
   }
 }

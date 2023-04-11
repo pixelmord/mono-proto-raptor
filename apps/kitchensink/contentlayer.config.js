@@ -9,7 +9,7 @@ import rehypeCodeTitles from 'rehype-code-titles';
 const computedFields = {
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.flattenedPath,
+    resolve: (doc) => doc._raw.flattenedPath.replace('blog/', ''),
   },
   structuredData: {
     type: 'object',
@@ -33,7 +33,7 @@ const computedFields = {
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `blog/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -67,7 +67,7 @@ export const Blog = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: 'content/blog',
+  contentDirPath: 'src/content',
   documentTypes: [Blog],
   mdx: {
     remarkPlugins: [remarkGfm],

@@ -11,3 +11,5 @@ export * from './Table';
 export * from './ToggleIconButton';
 export * from './ToggleSwitch';
 export * from './Headline';
+
+import './styles.css';
