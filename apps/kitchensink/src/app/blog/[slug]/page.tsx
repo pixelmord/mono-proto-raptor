@@ -19,8 +19,8 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
 
   const { title, datePublished: publishedTime, summary: description, image, slug } = post;
   const ogImage = image
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}${image}`
-    : `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${title}`;
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}${image}`
+    : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/og?title=${title}`;
 
   return {
     title,
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       description,
       type: 'article',
       publishedTime,
-      url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/blog/${slug}`,
+      url: `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/blog/${slug}`,
       images: [
         {
           url: ogImage,
